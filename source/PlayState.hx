@@ -38,7 +38,7 @@ class PlayState extends FlxState
 		var holder:Interactable = new Interactable(-30, -Global.PlanetSize.y/2 - 45, AssetPaths.rocket__png, 0, 10, Global.Surface-10, 100000, 
 			function()
 			{
-				openMessage("I don't think this is how it should look.\nOhh geez it's getting fuel EVERYWHERE, I really should fix this.");
+				openMessage("I don't think this is how it should look.\nOhh geez it's getting fuel EVERYWHERE, I really should fix this.\n A wrench and some tape should deal with the leak");
 			});
 		holder.angle = 160;
 		Interactables.push(holder);
