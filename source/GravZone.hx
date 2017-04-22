@@ -13,8 +13,11 @@ class GravZone
 	public var angleEnd:Float;
 	
 	public var DropThrough:Bool;
+	public var LeftWall:Bool;
+	public var RightWall:Bool;
+	public var Ceiling:Bool;
 	
-	public function new(anglea:Float, angleb:Float, radiala:Float, radialb:Float, dropThrough:Bool)
+	public function new(anglea:Float, angleb:Float, radiala:Float, radialb:Float, dropThrough:Bool, lwall:Bool, rwall:Bool, ceil:Bool)
 	{
 		radialStart = radiala;
 		radialEnd = radialb;
@@ -23,6 +26,9 @@ class GravZone
 		angleEnd = angleb;
 		
 		DropThrough = dropThrough;
+		LeftWall = lwall;
+		RightWall = rwall;
+		Ceiling = ceil;
 	}
 	
 }

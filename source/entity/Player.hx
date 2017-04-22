@@ -11,7 +11,7 @@ import flixel.system.FlxAssets.FlxGraphicAsset;
  */
 class Player extends FlxSprite 
 {
-	private var gravity:Int = 80;
+	private var gravity:Int = 160;
 	private var speed:Int = -60;
 	
 	public var anglePos:Float = 20;
@@ -19,8 +19,15 @@ class Player extends FlxSprite
 	public var angleVel:Float = 0;
 	public var radialVel:Float = 0;
 	
+	public var IgnoreGravity:Bool = false;
+	
 	public var GravZones:Array<GravZone>;
 	public var CurrentZone:GravZone;
+	public var RockWall:GravZone;
+	
+	public var Ladders:Array<Ladder>;
+	
+	
 	
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
@@ -28,11 +35,18 @@ class Player extends FlxSprite
 		Global.Surface = Global.PlanetSize.x / 2;
 		radialPos = Global.Surface + 20;
 		
-		GravZones = new Array<GravZone>();
-		GravZones.push(new GravZone(85, 95, 235, Global.PlanetSize.x / 2 + 20, true));
-		GravZones.push(new GravZone(60, 100, 190, 235, false));
+		Ladders = new Array<Ladder>();
+		Ladders.push(new Ladder(90, 190, Global.Surface));
 		
-		CurrentZone = new GravZone(0, 0, Global.Surface, Global.Surface, false); 
+		GravZones = new Array<GravZone>();
+		//wrench place
+		GravZones.push(new GravZone(85, 95, 210, Global.PlanetSize.x / 2 + 20, true, true, true, false));
+		GravZones.push(new GravZone(63, 85, 190, 210, false, false, true, true));
+		GravZones.push(new GravZone(85, 95, 190, 210, false, false, false, false));
+		RockWall = new GravZone(95, 100, 190, 210, false, true, false, true);
+		GravZones.push(RockWall);
+		
+		CurrentZone = new GravZone(-1, 361, Global.Surface, Global.Surface+100, false, false, false, true);
 	}
 	
 	override public function update(elapsed:Float):Void 
@@ -40,7 +54,11 @@ class Player extends FlxSprite
 		super.update(elapsed);
 		
 		//gravity
-		radialVel -= gravity * elapsed;
+		if (!IgnoreGravity)
+		{
+			radialVel -= gravity * elapsed;
+		}
+		var oldRadialVel = radialVel;
 		if (radialPos - radialVel * elapsed <= CurrentZone.radialStart + 1 && !CurrentZone.DropThrough)
 		{
 			radialVel = 0;
@@ -69,21 +87,45 @@ class Player extends FlxSprite
 		}
 		
 		//walls
-		if (angleVel < 0 && anglePos + angleVel*elapsed < CurrentZone.angleStart)
+		if (angleVel < 0 && anglePos + angleVel*elapsed < CurrentZone.angleStart && CurrentZone.RightWall)
 		{
 			angleVel = 0;
 		}
-		else if (angleVel > 0 && anglePos + angleVel*elapsed > CurrentZone.angleEnd)
+		else if (angleVel > 0 && anglePos + angleVel*elapsed > CurrentZone.angleEnd && CurrentZone.LeftWall)
 		{
 			angleVel = 0;
 		}
 		
 		//jumping
-		if (radialVel == 0 && FlxG.keys.anyJustPressed([SPACE]))
+		if ((radialVel == 0 || IgnoreGravity) && FlxG.keys.anyJustPressed([SPACE]))
 		{
 			trace("jump");
 			radialVel = 100;
 			radialPos += 2;
+		}
+		
+		//ladders
+		trace(OnLadder());
+		if (FlxG.keys.anyPressed([UP]) && OnLadder())
+		{
+			radialPos += 2;
+			if (radialVel < 20)
+			{
+				radialVel = 20;
+			}
+			IgnoreGravity = true;
+		}
+		else
+		{
+			IgnoreGravity = false;
+		}
+		
+		
+		//ceilings
+		if (radialPos + radialVel * elapsed > CurrentZone.radialEnd && CurrentZone.Ceiling)
+		{
+			radialVel = 0;
+			radialPos = CurrentZone.radialEnd;
 		}
 		
 		//paused?
@@ -102,7 +144,6 @@ class Player extends FlxSprite
 		{
 			anglePos -= 360;
 		}
-		trace(anglePos);
 		anglePos += angleVel * elapsed;
 	}
 	
@@ -113,14 +154,26 @@ class Player extends FlxSprite
 			if (radialPos >= a.radialStart && radialPos <= a.radialEnd
 				&& anglePos <= a.angleEnd && anglePos >= a.angleStart)
 			{
-				trace("new zone");
 				return a;	
 			}
 		}
 		if (radialPos > CurrentZone.radialEnd)
 		{
-			return new GravZone(-1, 361, Global.Surface, Global.Surface, false);
+			return new GravZone(-1, 361, Global.Surface, Global.Surface+100, false, false, false, true);
 		}
 		return CurrentZone;
+	}
+	
+	public function OnLadder():Bool
+	{
+		for (a in Ladders)
+		{
+			if (radialPos >= a.radialStart && radialPos <= a.radialEnd
+				&& anglePos <= a.Angle+2 && anglePos >= a.Angle-2)
+				{
+					return true;
+				}
+		}
+		return false;
 	}
 }

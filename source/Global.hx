@@ -13,6 +13,8 @@ class Global
 	
 	static public var Halt:Bool;
 	
+	static public var Wrench:Int = 0;
+	
 	static public function init() 
 	{
 		PlanetPos = new FlxPoint(640, 360);
