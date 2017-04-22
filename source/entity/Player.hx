@@ -14,10 +14,10 @@ class Player extends FlxSprite
 	private var gravity:Int = 100;
 	private var speed:Int = -30;
 	
-	private var anglePos:Float = 0;
-	private var radialPos:Float = 0;
-	private var angleVel:Float = 0;
-	private var radialVel:Float = 0;
+	public var anglePos:Float = 20;
+	public var radialPos:Float = 0;
+	public var angleVel:Float = 0;
+	public var radialVel:Float = 0;
 	
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
