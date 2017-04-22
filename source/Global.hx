@@ -11,6 +11,8 @@ class Global
 	static public var PlanetSize:FlxPoint;
 	static public var Surface:Float;
 	
+	static public var Halt:Bool;
+	
 	static public function init() 
 	{
 		PlanetPos = new FlxPoint(640, 360);
