@@ -52,9 +52,6 @@
 #ifndef INCLUDED_flixel_util_IFlxPooled
 #include <flixel/util/IFlxPooled.h>
 #endif
-#ifndef INCLUDED_haxe_Log
-#include <haxe/Log.h>
-#endif
 
 static const Int _hx_array_data_0[] = {
 	(Int)37,(Int)65,
@@ -66,7 +63,7 @@ static const Int _hx_array_data_2[] = {
 	(Int)32,
 };
 static const Int _hx_array_data_3[] = {
-	(Int)38,
+	(Int)38,(Int)87,
 };
 namespace entity{
 
@@ -89,25 +86,26 @@ HXLINE(  37)		super::__construct(X,Y,HX_("assets/images/player.png",87,88,81,c6)
 HXLINE(  38)		::Global_obj::Surface = ((Float)::Global_obj::PlanetSize->x / (Float)(int)2);
 HXLINE(  39)		this->radialPos = ::Global_obj::Surface;
 HXLINE(  41)		this->Ladders = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  42)		this->Ladders->push( ::entity::Ladder_obj::__new((int)90,(int)190,::Global_obj::Surface));
+HXLINE(  42)		Float _hx_tmp = (::Global_obj::Surface + (int)5);
+HXDLIN(  42)		this->Ladders->push( ::entity::Ladder_obj::__new((int)90,(int)190,_hx_tmp));
 HXLINE(  43)		this->Ladders->push( ::entity::Ladder_obj::__new((int)290,(int)190,::Global_obj::Surface));
 HXLINE(  44)		this->Ladders->push( ::entity::Ladder_obj::__new((int)340,(int)115,(int)210));
 HXLINE(  46)		this->GravZones = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  48)		Float _hx_tmp = (((Float)::Global_obj::PlanetSize->x / (Float)(int)2) + (int)20);
-HXDLIN(  48)		this->GravZones->push( ::GravZone_obj::__new((int)85,(int)95,(int)210,_hx_tmp,true,true,true,false));
+HXLINE(  48)		Float _hx_tmp1 = (((Float)::Global_obj::PlanetSize->x / (Float)(int)2) + (int)20);
+HXDLIN(  48)		this->GravZones->push( ::GravZone_obj::__new((int)85,(int)95,(int)210,_hx_tmp1,true,true,true,false));
 HXLINE(  49)		this->GravZones->push( ::GravZone_obj::__new((int)63,(int)85,(int)190,(int)210,false,false,true,true));
 HXLINE(  50)		this->GravZones->push( ::GravZone_obj::__new((int)85,(int)95,(int)190,(int)210,false,false,false,false));
 HXLINE(  51)		this->RockWall =  ::GravZone_obj::__new((int)95,(int)100,(int)190,(int)210,false,true,false,true);
 HXLINE(  52)		this->GravZones->push(this->RockWall);
 HXLINE(  53)		this->GravZones->push( ::GravZone_obj::__new((int)95,(int)130,(int)190,(int)210,false,true,false,true));
-HXLINE(  55)		Float _hx_tmp1 = ::Global_obj::Surface;
-HXDLIN(  55)		Float _hx_tmp2 = (::Global_obj::Surface + (int)20);
-HXDLIN(  55)		this->TrapDoor =  ::GravZone_obj::__new((int)290,(int)295,_hx_tmp1,_hx_tmp2,false,false,false,false);
+HXLINE(  55)		Float _hx_tmp2 = ::Global_obj::Surface;
+HXDLIN(  55)		Float _hx_tmp3 = (::Global_obj::Surface + (int)20);
+HXDLIN(  55)		this->TrapDoor =  ::GravZone_obj::__new((int)290,(int)295,_hx_tmp2,_hx_tmp3,false,false,false,false);
 HXLINE(  56)		this->GravZones->push(this->TrapDoor);
-HXLINE(  57)		Float _hx_tmp3 = (::Global_obj::Surface + (int)1);
-HXDLIN(  57)		this->GravZones->push( ::GravZone_obj::__new((int)290,(int)295,(int)210,_hx_tmp3,true,true,true,false));
+HXLINE(  57)		Float _hx_tmp4 = (::Global_obj::Surface + (int)1);
+HXDLIN(  57)		this->GravZones->push( ::GravZone_obj::__new((int)290,(int)295,(int)210,_hx_tmp4,true,true,true,false));
 HXLINE(  58)		this->GravZones->push( ::GravZone_obj::__new((int)290,(int)295,(int)190,(int)210,false,false,false,false));
-HXLINE(  59)		this->GravZones->push( ::GravZone_obj::__new((int)270,(int)285,(int)190,(int)210,false,false,true,true));
+HXLINE(  59)		this->GravZones->push( ::GravZone_obj::__new((int)270,(int)295,(int)190,(int)210,false,false,true,true));
 HXLINE(  60)		this->KeyDoor =  ::GravZone_obj::__new((int)300,(int)302,(int)190,(int)210,false,true,false,true);
 HXLINE(  61)		this->GravZones->push(this->KeyDoor);
 HXLINE(  62)		this->GravZones->push( ::GravZone_obj::__new((int)305,(int)340,(int)190,(int)210,false,false,false,true));
@@ -119,9 +117,9 @@ HXLINE(  67)		this->CodeDoor =  ::GravZone_obj::__new((int)345,(int)355,(int)190
 HXLINE(  68)		this->GravZones->push(this->CodeDoor);
 HXLINE(  69)		this->GravZones->push( ::GravZone_obj::__new((int)355,(int)360,(int)190,(int)210,false,false,false,true));
 HXLINE(  70)		this->GravZones->push( ::GravZone_obj::__new((int)0,(int)15,(int)190,(int)210,false,true,false,true));
-HXLINE(  72)		Float _hx_tmp4 = ::Global_obj::Surface;
-HXDLIN(  72)		Float _hx_tmp5 = (::Global_obj::Surface + (int)100);
-HXDLIN(  72)		this->CurrentZone =  ::GravZone_obj::__new((int)-1,(int)361,_hx_tmp4,_hx_tmp5,false,false,false,true);
+HXLINE(  72)		Float _hx_tmp5 = ::Global_obj::Surface;
+HXDLIN(  72)		Float _hx_tmp6 = (::Global_obj::Surface + (int)100);
+HXDLIN(  72)		this->CurrentZone =  ::GravZone_obj::__new((int)-1,(int)361,_hx_tmp5,_hx_tmp6,false,false,false,true);
             	}
 
 Dynamic Player_obj::__CreateEmpty() { return new Player_obj; }
@@ -145,282 +143,278 @@ void Player_obj::update(Float elapsed){
             	HX_STACK_THIS(this)
             	HX_STACK_ARG(elapsed,"elapsed")
 HXLINE(  77)		this->super::update(elapsed);
-HXLINE(  78)		::haxe::Log_obj::trace(elapsed,hx::SourceInfo(HX_("Player.hx",dd,c9,7f,a2),78,HX_("entity.Player",6c,9d,ea,8b),HX_("update",09,86,05,87)));
-HXLINE(  81)		Bool _hx_tmp = !(this->IgnoreGravity);
-HXDLIN(  81)		if (_hx_tmp) {
-HXLINE(  83)			hx::SubEq(this->radialVel,(this->gravity * elapsed));
+HXLINE(  80)		Bool _hx_tmp = !(this->IgnoreGravity);
+HXDLIN(  80)		if (_hx_tmp) {
+HXLINE(  82)			hx::SubEq(this->radialVel,(this->gravity * elapsed));
             		}
-HXLINE(  86)		Bool _hx_tmp1;
-HXDLIN(  86)		if (((this->radialPos - (this->radialVel * elapsed)) <= (this->CurrentZone->radialStart + (int)1))) {
-HXLINE(  86)			_hx_tmp1 = !(this->CurrentZone->DropThrough);
-            		}
-            		else {
-HXLINE(  86)			_hx_tmp1 = false;
-            		}
-HXDLIN(  86)		if (_hx_tmp1) {
-HXLINE(  88)			this->radialVel = (int)0;
-HXLINE(  89)			this->radialPos = this->CurrentZone->radialStart;
-            		}
-HXLINE(  93)		Bool _hx_tmp2;
-HXDLIN(  93)		Bool _hx_tmp3;
-HXDLIN(  93)		Bool _hx_tmp4;
-HXDLIN(  93)		Bool _hx_tmp5;
-HXDLIN(  93)		Bool _hx_tmp6;
-HXDLIN(  93)		if ((this->radialPos >= this->CurrentZone->radialStart)) {
-HXLINE(  93)			_hx_tmp6 = (this->radialPos <= this->CurrentZone->radialEnd);
+HXLINE(  85)		Bool _hx_tmp1;
+HXDLIN(  85)		if (((this->radialPos - (this->radialVel * elapsed)) <= (this->CurrentZone->radialStart + (int)1))) {
+HXLINE(  85)			_hx_tmp1 = !(this->CurrentZone->DropThrough);
             		}
             		else {
-HXLINE(  93)			_hx_tmp6 = false;
+HXLINE(  85)			_hx_tmp1 = false;
             		}
-HXDLIN(  93)		if (_hx_tmp6) {
-HXLINE(  93)			_hx_tmp5 = (this->anglePos <= this->CurrentZone->angleEnd);
+HXDLIN(  85)		if (_hx_tmp1) {
+HXLINE(  87)			this->radialVel = (int)0;
+HXLINE(  88)			this->radialPos = this->CurrentZone->radialStart;
+            		}
+HXLINE(  92)		Bool _hx_tmp2;
+HXDLIN(  92)		Bool _hx_tmp3;
+HXDLIN(  92)		Bool _hx_tmp4;
+HXDLIN(  92)		Bool _hx_tmp5;
+HXDLIN(  92)		Bool _hx_tmp6;
+HXDLIN(  92)		if ((this->radialPos >= this->CurrentZone->radialStart)) {
+HXLINE(  92)			_hx_tmp6 = (this->radialPos <= this->CurrentZone->radialEnd);
             		}
             		else {
-HXLINE(  93)			_hx_tmp5 = false;
+HXLINE(  92)			_hx_tmp6 = false;
             		}
-HXDLIN(  93)		if (_hx_tmp5) {
-HXLINE(  93)			_hx_tmp4 = (this->anglePos >= this->CurrentZone->angleStart);
+HXDLIN(  92)		if (_hx_tmp6) {
+HXLINE(  92)			_hx_tmp5 = (this->anglePos <= this->CurrentZone->angleEnd);
             		}
             		else {
-HXLINE(  93)			_hx_tmp4 = false;
+HXLINE(  92)			_hx_tmp5 = false;
             		}
-HXDLIN(  93)		if (!(!(_hx_tmp4))) {
-HXLINE(  94)			if ((this->anglePos > (int)85)) {
-HXLINE(  93)				_hx_tmp3 = (this->anglePos < (int)95);
+HXDLIN(  92)		if (_hx_tmp5) {
+HXLINE(  92)			_hx_tmp4 = (this->anglePos >= this->CurrentZone->angleStart);
+            		}
+            		else {
+HXLINE(  92)			_hx_tmp4 = false;
+            		}
+HXDLIN(  92)		if (!(!(_hx_tmp4))) {
+HXLINE(  93)			if ((this->anglePos > (int)85)) {
+HXLINE(  92)				_hx_tmp3 = (this->anglePos < (int)95);
             			}
             			else {
-HXLINE(  93)				_hx_tmp3 = false;
+HXLINE(  92)				_hx_tmp3 = false;
             			}
             		}
             		else {
-HXLINE(  93)			_hx_tmp3 = true;
+HXLINE(  92)			_hx_tmp3 = true;
             		}
-HXDLIN(  93)		if (!(_hx_tmp3)) {
-HXLINE(  94)			if ((this->anglePos < (int)295)) {
-HXLINE(  93)				_hx_tmp2 = (this->anglePos > (int)285);
+HXDLIN(  92)		if (!(_hx_tmp3)) {
+HXLINE(  93)			if ((this->anglePos < (int)295)) {
+HXLINE(  92)				_hx_tmp2 = (this->anglePos > (int)285);
             			}
             			else {
-HXLINE(  93)				_hx_tmp2 = false;
+HXLINE(  92)				_hx_tmp2 = false;
             			}
             		}
             		else {
-HXLINE(  93)			_hx_tmp2 = true;
+HXLINE(  92)			_hx_tmp2 = true;
             		}
-HXDLIN(  93)		if (_hx_tmp2) {
-HXLINE(  96)			::haxe::Log_obj::trace(HX_("ech",4a,fa,4c,00),hx::SourceInfo(HX_("Player.hx",dd,c9,7f,a2),96,HX_("entity.Player",6c,9d,ea,8b),HX_("update",09,86,05,87)));
-HXLINE(  97)			this->CurrentZone = this->getCurrentGravZone();
+HXDLIN(  92)		if (_hx_tmp2) {
+HXLINE(  95)			this->CurrentZone = this->getCurrentGravZone();
             		}
-HXLINE( 100)		::haxe::Log_obj::trace(this->anglePos,hx::SourceInfo(HX_("Player.hx",dd,c9,7f,a2),100,HX_("entity.Player",6c,9d,ea,8b),HX_("update",09,86,05,87)));
-HXLINE( 103)		Float _hx_tmp7 = this->radialPos;
-HXDLIN( 103)		Float _hx_tmp8 = this->get_width();
-HXDLIN( 103)		HX_VARI(  ::flixel::math::FlxPoint,Transform) =  ::flixel::math::FlxPoint_obj::__new((int)0,(_hx_tmp7 + ((Float)_hx_tmp8 / (Float)(int)2)));
-HXLINE( 104)		HX_VARI(  ::flixel::math::FlxPoint,point) = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
-HXDLIN( 104)		point->_inPool = false;
-HXDLIN( 104)		point->_weak = true;
-HXDLIN( 104)		Transform->rotate(point,-(this->anglePos));
-HXLINE( 105)		Float _hx_tmp9 = (::Global_obj::PlanetPos->x - Transform->x);
-HXDLIN( 105)		Float _hx_tmp10 = this->get_width();
-HXDLIN( 105)		Float _hx_tmp11 = (_hx_tmp9 - ((Float)_hx_tmp10 / (Float)(int)2));
-HXDLIN( 105)		Float _hx_tmp12 = (::Global_obj::PlanetPos->y - Transform->y);
-HXDLIN( 105)		Float _hx_tmp13 = this->get_width();
-HXDLIN( 105)		this->setPosition(_hx_tmp11,(_hx_tmp12 - ((Float)_hx_tmp13 / (Float)(int)2)));
-HXLINE( 108)		Bool _hx_tmp14 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_0,2),(int)1);
-HXDLIN( 108)		if (_hx_tmp14) {
-HXLINE( 110)			this->angleVel = -(this->speed);
+HXLINE(  98)		Float _hx_tmp7 = this->radialPos;
+HXDLIN(  98)		Float _hx_tmp8 = this->get_width();
+HXDLIN(  98)		HX_VARI(  ::flixel::math::FlxPoint,Transform) =  ::flixel::math::FlxPoint_obj::__new((int)0,(_hx_tmp7 + ((Float)_hx_tmp8 / (Float)(int)2)));
+HXLINE(  99)		HX_VARI(  ::flixel::math::FlxPoint,point) = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
+HXDLIN(  99)		point->_inPool = false;
+HXDLIN(  99)		point->_weak = true;
+HXDLIN(  99)		Transform->rotate(point,-(this->anglePos));
+HXLINE( 100)		Float _hx_tmp9 = (::Global_obj::PlanetPos->x - Transform->x);
+HXDLIN( 100)		Float _hx_tmp10 = this->get_width();
+HXDLIN( 100)		Float _hx_tmp11 = (_hx_tmp9 - ((Float)_hx_tmp10 / (Float)(int)2));
+HXDLIN( 100)		Float _hx_tmp12 = (::Global_obj::PlanetPos->y - Transform->y);
+HXDLIN( 100)		Float _hx_tmp13 = this->get_width();
+HXDLIN( 100)		this->setPosition(_hx_tmp11,(_hx_tmp12 - ((Float)_hx_tmp13 / (Float)(int)2)));
+HXLINE( 103)		Bool _hx_tmp14 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_0,2),(int)1);
+HXDLIN( 103)		if (_hx_tmp14) {
+HXLINE( 105)			this->angleVel = -(this->speed);
             		}
             		else {
-HXLINE( 112)			Bool _hx_tmp15 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_1,2),(int)1);
-HXDLIN( 112)			if (_hx_tmp15) {
-HXLINE( 114)				this->angleVel = this->speed;
+HXLINE( 107)			Bool _hx_tmp15 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_1,2),(int)1);
+HXDLIN( 107)			if (_hx_tmp15) {
+HXLINE( 109)				this->angleVel = this->speed;
             			}
             			else {
-HXLINE( 118)				this->angleVel = (int)0;
+HXLINE( 113)				this->angleVel = (int)0;
             			}
             		}
-HXLINE( 122)		Bool _hx_tmp16;
-HXDLIN( 122)		Bool _hx_tmp17;
-HXDLIN( 122)		if ((this->angleVel < (int)0)) {
-HXLINE( 122)			_hx_tmp17 = ((this->anglePos + (this->angleVel * elapsed)) < this->CurrentZone->angleStart);
+HXLINE( 117)		Bool _hx_tmp16;
+HXDLIN( 117)		Bool _hx_tmp17;
+HXDLIN( 117)		if ((this->angleVel < (int)0)) {
+HXLINE( 117)			_hx_tmp17 = ((this->anglePos + (this->angleVel * elapsed)) < this->CurrentZone->angleStart);
             		}
             		else {
-HXLINE( 122)			_hx_tmp17 = false;
+HXLINE( 117)			_hx_tmp17 = false;
             		}
-HXDLIN( 122)		if (_hx_tmp17) {
-HXLINE( 122)			_hx_tmp16 = this->CurrentZone->RightWall;
-            		}
-            		else {
-HXLINE( 122)			_hx_tmp16 = false;
-            		}
-HXDLIN( 122)		if (_hx_tmp16) {
-HXLINE( 124)			this->angleVel = (int)0;
+HXDLIN( 117)		if (_hx_tmp17) {
+HXLINE( 117)			_hx_tmp16 = this->CurrentZone->RightWall;
             		}
             		else {
-HXLINE( 126)			Bool _hx_tmp18;
-HXDLIN( 126)			Bool _hx_tmp19;
-HXDLIN( 126)			if ((this->angleVel > (int)0)) {
-HXLINE( 126)				_hx_tmp19 = ((this->anglePos + (this->angleVel * elapsed)) > this->CurrentZone->angleEnd);
+HXLINE( 117)			_hx_tmp16 = false;
+            		}
+HXDLIN( 117)		if (_hx_tmp16) {
+HXLINE( 119)			this->angleVel = (int)0;
+            		}
+            		else {
+HXLINE( 121)			Bool _hx_tmp18;
+HXDLIN( 121)			Bool _hx_tmp19;
+HXDLIN( 121)			if ((this->angleVel > (int)0)) {
+HXLINE( 121)				_hx_tmp19 = ((this->anglePos + (this->angleVel * elapsed)) > this->CurrentZone->angleEnd);
             			}
             			else {
-HXLINE( 126)				_hx_tmp19 = false;
+HXLINE( 121)				_hx_tmp19 = false;
             			}
-HXDLIN( 126)			if (_hx_tmp19) {
-HXLINE( 126)				_hx_tmp18 = this->CurrentZone->LeftWall;
+HXDLIN( 121)			if (_hx_tmp19) {
+HXLINE( 121)				_hx_tmp18 = this->CurrentZone->LeftWall;
             			}
             			else {
-HXLINE( 126)				_hx_tmp18 = false;
+HXLINE( 121)				_hx_tmp18 = false;
             			}
-HXDLIN( 126)			if (_hx_tmp18) {
-HXLINE( 128)				this->angleVel = (int)0;
+HXDLIN( 121)			if (_hx_tmp18) {
+HXLINE( 123)				this->angleVel = (int)0;
             			}
             		}
-HXLINE( 132)		Bool _hx_tmp20;
-HXDLIN( 132)		Bool _hx_tmp21;
-HXDLIN( 132)		if ((this->radialVel != (int)0)) {
-HXLINE( 132)			_hx_tmp21 = this->IgnoreGravity;
+HXLINE( 127)		Bool _hx_tmp20;
+HXDLIN( 127)		Bool _hx_tmp21;
+HXDLIN( 127)		if ((this->radialVel != (int)0)) {
+HXLINE( 127)			_hx_tmp21 = this->IgnoreGravity;
             		}
             		else {
-HXLINE( 132)			_hx_tmp21 = true;
+HXLINE( 127)			_hx_tmp21 = true;
             		}
-HXDLIN( 132)		if (_hx_tmp21) {
-HXLINE( 132)			_hx_tmp20 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_2,1),(int)2);
+HXDLIN( 127)		if (_hx_tmp21) {
+HXLINE( 127)			_hx_tmp20 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_2,1),(int)2);
             		}
             		else {
-HXLINE( 132)			_hx_tmp20 = false;
+HXLINE( 127)			_hx_tmp20 = false;
             		}
-HXDLIN( 132)		if (_hx_tmp20) {
-HXLINE( 134)			::haxe::Log_obj::trace(HX_("jump",ee,c4,69,46),hx::SourceInfo(HX_("Player.hx",dd,c9,7f,a2),134,HX_("entity.Player",6c,9d,ea,8b),HX_("update",09,86,05,87)));
-HXLINE( 135)			this->radialVel = (int)100;
+HXDLIN( 127)		if (_hx_tmp20) {
+HXLINE( 129)			this->radialVel = (int)100;
+HXLINE( 130)			hx::AddEq(this->radialPos,(int)2);
+            		}
+HXLINE( 134)		Bool _hx_tmp22;
+HXDLIN( 134)		Bool _hx_tmp23 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_3,2),(int)1);
+HXDLIN( 134)		if (_hx_tmp23) {
+HXLINE( 134)			_hx_tmp22 = this->OnLadder();
+            		}
+            		else {
+HXLINE( 134)			_hx_tmp22 = false;
+            		}
+HXDLIN( 134)		if (_hx_tmp22) {
 HXLINE( 136)			hx::AddEq(this->radialPos,(int)2);
-            		}
-HXLINE( 140)		Bool _hx_tmp22;
-HXDLIN( 140)		Bool _hx_tmp23 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_3,1),(int)1);
-HXDLIN( 140)		if (_hx_tmp23) {
-HXLINE( 140)			_hx_tmp22 = this->OnLadder();
-            		}
-            		else {
-HXLINE( 140)			_hx_tmp22 = false;
-            		}
-HXDLIN( 140)		if (_hx_tmp22) {
-HXLINE( 142)			hx::AddEq(this->radialPos,(int)2);
-HXLINE( 143)			Bool _hx_tmp24 = (this->radialVel < (int)20);
-HXDLIN( 143)			if (_hx_tmp24) {
-HXLINE( 145)				this->radialVel = (int)20;
+HXLINE( 137)			Bool _hx_tmp24 = (this->radialVel < (int)20);
+HXDLIN( 137)			if (_hx_tmp24) {
+HXLINE( 139)				this->radialVel = (int)20;
             			}
-HXLINE( 147)			this->IgnoreGravity = true;
+HXLINE( 141)			this->IgnoreGravity = true;
             		}
             		else {
-HXLINE( 151)			this->IgnoreGravity = false;
+HXLINE( 145)			this->IgnoreGravity = false;
             		}
-HXLINE( 156)		Bool _hx_tmp25;
-HXDLIN( 156)		if (((this->radialPos + (this->radialVel * elapsed)) > this->CurrentZone->radialEnd)) {
-HXLINE( 156)			_hx_tmp25 = this->CurrentZone->Ceiling;
-            		}
-            		else {
-HXLINE( 156)			_hx_tmp25 = false;
-            		}
-HXDLIN( 156)		if (_hx_tmp25) {
-HXLINE( 158)			this->radialVel = (int)0;
-HXLINE( 159)			this->radialPos = this->CurrentZone->radialEnd;
-            		}
-HXLINE( 163)		Bool _hx_tmp26 = ::Global_obj::Halt;
-HXDLIN( 163)		if (_hx_tmp26) {
-HXLINE( 165)			this->angleVel = (int)0;
-            		}
-HXLINE( 169)		hx::AddEq(this->radialPos,(this->radialVel * elapsed));
-HXLINE( 170)		Bool _hx_tmp27 = (this->anglePos < (int)0);
-HXDLIN( 170)		if (_hx_tmp27) {
-HXLINE( 172)			hx::AddEq(this->anglePos,(int)360);
+HXLINE( 150)		Bool _hx_tmp25;
+HXDLIN( 150)		if (((this->radialPos + (this->radialVel * elapsed)) > this->CurrentZone->radialEnd)) {
+HXLINE( 150)			_hx_tmp25 = this->CurrentZone->Ceiling;
             		}
             		else {
-HXLINE( 174)			Bool _hx_tmp28 = (this->anglePos > (int)360);
-HXDLIN( 174)			if (_hx_tmp28) {
-HXLINE( 176)				hx::SubEq(this->anglePos,(int)360);
+HXLINE( 150)			_hx_tmp25 = false;
+            		}
+HXDLIN( 150)		if (_hx_tmp25) {
+HXLINE( 152)			this->radialVel = (int)0;
+HXLINE( 153)			this->radialPos = this->CurrentZone->radialEnd;
+            		}
+HXLINE( 157)		Bool _hx_tmp26 = ::Global_obj::Halt;
+HXDLIN( 157)		if (_hx_tmp26) {
+HXLINE( 159)			this->angleVel = (int)0;
+            		}
+HXLINE( 163)		hx::AddEq(this->radialPos,(this->radialVel * elapsed));
+HXLINE( 164)		Bool _hx_tmp27 = (this->anglePos < (int)0);
+HXDLIN( 164)		if (_hx_tmp27) {
+HXLINE( 166)			hx::AddEq(this->anglePos,(int)360);
+            		}
+            		else {
+HXLINE( 168)			Bool _hx_tmp28 = (this->anglePos > (int)360);
+HXDLIN( 168)			if (_hx_tmp28) {
+HXLINE( 170)				hx::SubEq(this->anglePos,(int)360);
             			}
             		}
-HXLINE( 178)		hx::AddEq(this->anglePos,(this->angleVel * elapsed));
+HXLINE( 172)		hx::AddEq(this->anglePos,(this->angleVel * elapsed));
             	}
 
 
  ::GravZone Player_obj::getCurrentGravZone(){
-            	HX_STACK_FRAME("entity.Player","getCurrentGravZone",0xa6c50151,"entity.Player.getCurrentGravZone","entity/Player.hx",182,0x10a648b1)
+            	HX_STACK_FRAME("entity.Player","getCurrentGravZone",0xa6c50151,"entity.Player.getCurrentGravZone","entity/Player.hx",176,0x10a648b1)
             	HX_STACK_THIS(this)
-HXLINE( 183)		{
-HXLINE( 183)			HX_VARI( Int,_g) = (int)0;
-HXDLIN( 183)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->GravZones;
-HXDLIN( 183)			while((_g < _g1->length)){
-HXLINE( 183)				HX_VARI(  ::GravZone,a) = _g1->__get(_g).StaticCast<  ::GravZone >();
-HXDLIN( 183)				++_g;
-HXLINE( 185)				Bool _hx_tmp;
-HXDLIN( 185)				Bool _hx_tmp1;
-HXDLIN( 185)				Bool _hx_tmp2;
-HXDLIN( 185)				if ((this->radialPos >= a->radialStart)) {
-HXLINE( 185)					_hx_tmp2 = (this->radialPos <= a->radialEnd);
+HXLINE( 177)		{
+HXLINE( 177)			HX_VARI( Int,_g) = (int)0;
+HXDLIN( 177)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->GravZones;
+HXDLIN( 177)			while((_g < _g1->length)){
+HXLINE( 177)				HX_VARI(  ::GravZone,a) = _g1->__get(_g).StaticCast<  ::GravZone >();
+HXDLIN( 177)				++_g;
+HXLINE( 179)				Bool _hx_tmp;
+HXDLIN( 179)				Bool _hx_tmp1;
+HXDLIN( 179)				Bool _hx_tmp2;
+HXDLIN( 179)				if ((this->radialPos >= a->radialStart)) {
+HXLINE( 179)					_hx_tmp2 = (this->radialPos <= a->radialEnd);
             				}
             				else {
-HXLINE( 185)					_hx_tmp2 = false;
+HXLINE( 179)					_hx_tmp2 = false;
             				}
-HXDLIN( 185)				if (_hx_tmp2) {
-HXLINE( 185)					_hx_tmp1 = (this->anglePos <= a->angleEnd);
-            				}
-            				else {
-HXLINE( 185)					_hx_tmp1 = false;
-            				}
-HXDLIN( 185)				if (_hx_tmp1) {
-HXLINE( 185)					_hx_tmp = (this->anglePos >= a->angleStart);
+HXDLIN( 179)				if (_hx_tmp2) {
+HXLINE( 179)					_hx_tmp1 = (this->anglePos <= a->angleEnd);
             				}
             				else {
-HXLINE( 185)					_hx_tmp = false;
+HXLINE( 179)					_hx_tmp1 = false;
             				}
-HXDLIN( 185)				if (_hx_tmp) {
-HXLINE( 188)					return a;
+HXDLIN( 179)				if (_hx_tmp1) {
+HXLINE( 179)					_hx_tmp = (this->anglePos >= a->angleStart);
+            				}
+            				else {
+HXLINE( 179)					_hx_tmp = false;
+            				}
+HXDLIN( 179)				if (_hx_tmp) {
+HXLINE( 182)					return a;
             				}
             			}
             		}
-HXLINE( 191)		if ((this->radialPos >= this->CurrentZone->radialEnd)) {
-HXLINE( 193)			return  ::GravZone_obj::__new((int)-1,(int)361,::Global_obj::Surface,(::Global_obj::Surface + (int)100),false,false,false,true);
+HXLINE( 185)		if ((this->radialPos >= this->CurrentZone->radialEnd)) {
+HXLINE( 187)			return  ::GravZone_obj::__new((int)-1,(int)361,::Global_obj::Surface,(::Global_obj::Surface + (int)100),false,false,false,true);
             		}
-HXLINE( 195)		return this->CurrentZone;
+HXLINE( 189)		return this->CurrentZone;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Player_obj,getCurrentGravZone,return )
 
 Bool Player_obj::OnLadder(){
-            	HX_STACK_FRAME("entity.Player","OnLadder",0x5d52b2c3,"entity.Player.OnLadder","entity/Player.hx",199,0x10a648b1)
+            	HX_STACK_FRAME("entity.Player","OnLadder",0x5d52b2c3,"entity.Player.OnLadder","entity/Player.hx",193,0x10a648b1)
             	HX_STACK_THIS(this)
-HXLINE( 200)		{
-HXLINE( 200)			HX_VARI( Int,_g) = (int)0;
-HXDLIN( 200)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->Ladders;
-HXDLIN( 200)			while((_g < _g1->length)){
-HXLINE( 200)				HX_VARI(  ::entity::Ladder,a) = _g1->__get(_g).StaticCast<  ::entity::Ladder >();
-HXDLIN( 200)				++_g;
-HXLINE( 202)				Bool _hx_tmp;
-HXDLIN( 202)				Bool _hx_tmp1;
-HXDLIN( 202)				Bool _hx_tmp2;
-HXDLIN( 202)				if ((this->radialPos >= a->radialStart)) {
-HXLINE( 202)					_hx_tmp2 = (this->radialPos <= a->radialEnd);
+HXLINE( 194)		{
+HXLINE( 194)			HX_VARI( Int,_g) = (int)0;
+HXDLIN( 194)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->Ladders;
+HXDLIN( 194)			while((_g < _g1->length)){
+HXLINE( 194)				HX_VARI(  ::entity::Ladder,a) = _g1->__get(_g).StaticCast<  ::entity::Ladder >();
+HXDLIN( 194)				++_g;
+HXLINE( 196)				Bool _hx_tmp;
+HXDLIN( 196)				Bool _hx_tmp1;
+HXDLIN( 196)				Bool _hx_tmp2;
+HXDLIN( 196)				if ((this->radialPos >= a->radialStart)) {
+HXLINE( 196)					_hx_tmp2 = (this->radialPos <= a->radialEnd);
             				}
             				else {
-HXLINE( 202)					_hx_tmp2 = false;
+HXLINE( 196)					_hx_tmp2 = false;
             				}
-HXDLIN( 202)				if (_hx_tmp2) {
-HXLINE( 202)					_hx_tmp1 = (this->anglePos <= (a->Angle + (int)2));
-            				}
-            				else {
-HXLINE( 202)					_hx_tmp1 = false;
-            				}
-HXDLIN( 202)				if (_hx_tmp1) {
-HXLINE( 202)					_hx_tmp = (this->anglePos >= (a->Angle - (int)2));
+HXDLIN( 196)				if (_hx_tmp2) {
+HXLINE( 196)					_hx_tmp1 = (this->anglePos <= (a->Angle + (int)2));
             				}
             				else {
-HXLINE( 202)					_hx_tmp = false;
+HXLINE( 196)					_hx_tmp1 = false;
             				}
-HXDLIN( 202)				if (_hx_tmp) {
-HXLINE( 205)					return true;
+HXDLIN( 196)				if (_hx_tmp1) {
+HXLINE( 196)					_hx_tmp = (this->anglePos >= (a->Angle - (int)2));
+            				}
+            				else {
+HXLINE( 196)					_hx_tmp = false;
+            				}
+HXDLIN( 196)				if (_hx_tmp) {
+HXLINE( 199)					return true;
             				}
             			}
             		}
-HXLINE( 208)		return false;
+HXLINE( 202)		return false;
             	}
 
 

@@ -262,21 +262,21 @@ HXLINE( 116)				this->close();
 HXLINE( 119)			Bool _hx_tmp18;
 HXDLIN( 119)			Bool _hx_tmp19;
 HXDLIN( 119)			Bool _hx_tmp20;
-HXDLIN( 119)			Bool _hx_tmp21 = (::flixel::FlxG_obj::mouse->getPosition(null())->x > (int)100);
+HXDLIN( 119)			Bool _hx_tmp21 = (::flixel::FlxG_obj::mouse->getPosition(null())->x > (int)90);
 HXDLIN( 119)			if (_hx_tmp21) {
-HXLINE( 119)				_hx_tmp20 = (::flixel::FlxG_obj::mouse->getPosition(null())->x < (int)172);
+HXLINE( 119)				_hx_tmp20 = (::flixel::FlxG_obj::mouse->getPosition(null())->x < (int)182);
             			}
             			else {
 HXLINE( 119)				_hx_tmp20 = false;
             			}
 HXDLIN( 119)			if (_hx_tmp20) {
-HXLINE( 119)				_hx_tmp19 = (::flixel::FlxG_obj::mouse->getPosition(null())->y > (int)365);
+HXLINE( 119)				_hx_tmp19 = (::flixel::FlxG_obj::mouse->getPosition(null())->y > (int)355);
             			}
             			else {
 HXLINE( 119)				_hx_tmp19 = false;
             			}
 HXDLIN( 119)			if (_hx_tmp19) {
-HXLINE( 119)				_hx_tmp18 = (::flixel::FlxG_obj::mouse->getPosition(null())->y < (int)720);
+HXLINE( 119)				_hx_tmp18 = (::flixel::FlxG_obj::mouse->getPosition(null())->y < (int)730);
             			}
             			else {
 HXLINE( 119)				_hx_tmp18 = false;
@@ -339,13 +339,10 @@ HXDLIN( 131)					if (_hx_tmp26) {
 HXLINE( 134)						::haxe::Log_obj::trace(HX_("plug 3",e1,4a,e3,44),hx::SourceInfo(HX_("FuelCellGet.hx",60,ea,6a,7b),134,HX_("FuelCellGet",1e,1f,6a,34),HX_("update",09,86,05,87)));
 HXLINE( 135)						this->selected = (int)3;
             					}
-            					else {
-HXLINE( 139)						this->selected = (int)0;
-            					}
             				}
             			}
             		}
-HXLINE( 144)		this->super::update(elapsed);
+HXLINE( 140)		this->super::update(elapsed);
             	}
 
 

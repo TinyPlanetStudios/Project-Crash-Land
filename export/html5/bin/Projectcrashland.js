@@ -165,7 +165,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "621", company : "Grimmr (Tiny Planet Studios)", file : "Projectcrashland", fps : 60, name : "Project crash land", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "Project crash land", vsync : true, width : 1280, x : null, y : null}]};
+	ApplicationMain.config = { build : "642", company : "Grimmr (Tiny Planet Studios)", file : "Projectcrashland", fps : 60, name : "Project crash land", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "Project crash land", vsync : true, width : 1280, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -4330,7 +4330,7 @@ FuelCellGet.prototype = $extend(flixel_FlxSubState.prototype,{
 				this.Parent.persistentUpdate = true;
 				this.close();
 			}
-			if(flixel_FlxG.mouse.getPosition().x > 100 && flixel_FlxG.mouse.getPosition().x < 172 && flixel_FlxG.mouse.getPosition().y > 365 && flixel_FlxG.mouse.getPosition().y < 720) {
+			if(flixel_FlxG.mouse.getPosition().x > 90 && flixel_FlxG.mouse.getPosition().x < 182 && flixel_FlxG.mouse.getPosition().y > 355 && flixel_FlxG.mouse.getPosition().y < 730) {
 				haxe_Log.trace("plug 1",{ fileName : "FuelCellGet.hx", lineNumber : 122, className : "FuelCellGet", methodName : "update"});
 				this.selected = 1;
 			} else if(flixel_FlxG.mouse.getPosition().x > 765 && flixel_FlxG.mouse.getPosition().x < 850 && flixel_FlxG.mouse.getPosition().y > 370 && flixel_FlxG.mouse.getPosition().y < 720) {
@@ -4339,8 +4339,6 @@ FuelCellGet.prototype = $extend(flixel_FlxSubState.prototype,{
 			} else if(flixel_FlxG.mouse.getPosition().x > 970 && flixel_FlxG.mouse.getPosition().x < 1050 && flixel_FlxG.mouse.getPosition().y > 370 && flixel_FlxG.mouse.getPosition().y < 720) {
 				haxe_Log.trace("plug 3",{ fileName : "FuelCellGet.hx", lineNumber : 134, className : "FuelCellGet", methodName : "update"});
 				this.selected = 3;
-			} else {
-				this.selected = 0;
 			}
 		}
 		flixel_FlxSubState.prototype.update.call(this,elapsed);
@@ -4571,6 +4569,7 @@ NMEPreloader.prototype = $extend(openfl_display_Sprite.prototype,{
 	,__class__: NMEPreloader
 });
 var PlayState = function(MaxSize) {
+	this.IgnoreEnter = false;
 	flixel_FlxState.call(this,MaxSize);
 };
 $hxClasses["PlayState"] = PlayState;
@@ -4815,19 +4814,25 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		} else {
 			this.remove(this.useIcon);
 		}
-		if(this.text.text != "" && flixel_FlxG.mouse._leftButton.current == 2) {
+		if(this.text.text != "" && (flixel_FlxG.mouse._leftButton.current == 2 || flixel_FlxG.keys.checkKeyArrayState([13],2) && !this.IgnoreEnter)) {
 			this.text.set_text("");
 			Global.Halt = false;
 			this.remove(this.text);
 			this.remove(this.textBox);
+			this.IgnoreEnter = false;
 		}
 	}
 	,openMessage: function(m) {
-		this.text.set_text(m);
-		this.text.set_y((200 - this.text.get_height()) / 2 + 520);
-		Global.Halt = true;
-		this.add(this.textBox);
-		this.add(this.text);
+		if(!this.IgnoreEnter) {
+			this.text.set_text(m);
+			this.text.set_y((200 - this.text.get_height()) / 2 + 520);
+			Global.Halt = true;
+			this.add(this.textBox);
+			this.add(this.text);
+			this.IgnoreEnter = true;
+		} else {
+			this.IgnoreEnter = false;
+		}
 	}
 	,__class__: PlayState
 });
@@ -7719,7 +7724,7 @@ var entity_Player = function(X,Y,SimpleGraphic) {
 	this.GravZones.push(this.TrapDoor);
 	this.GravZones.push(new GravZone(290,295,210,Global.Surface + 1,true,true,true,false));
 	this.GravZones.push(new GravZone(290,295,190,210,false,false,false,false));
-	this.GravZones.push(new GravZone(270,285,190,210,false,false,true,true));
+	this.GravZones.push(new GravZone(270,295,190,210,false,false,true,true));
 	this.KeyDoor = new GravZone(300,302,190,210,false,true,false,true);
 	this.GravZones.push(this.KeyDoor);
 	this.GravZones.push(new GravZone(305,340,190,210,false,false,false,true));
@@ -7739,7 +7744,6 @@ entity_Player.__super__ = flixel_FlxSprite;
 entity_Player.prototype = $extend(flixel_FlxSprite.prototype,{
 	update: function(elapsed) {
 		flixel_FlxSprite.prototype.update.call(this,elapsed);
-		haxe_Log.trace(elapsed,{ fileName : "Player.hx", lineNumber : 78, className : "entity.Player", methodName : "update"});
 		if(!this.IgnoreGravity) {
 			this.radialVel -= this.gravity * elapsed;
 		}
@@ -7748,10 +7752,8 @@ entity_Player.prototype = $extend(flixel_FlxSprite.prototype,{
 			this.radialPos = this.CurrentZone.radialStart;
 		}
 		if(!(this.radialPos >= this.CurrentZone.radialStart && this.radialPos <= this.CurrentZone.radialEnd && this.anglePos <= this.CurrentZone.angleEnd && this.anglePos >= this.CurrentZone.angleStart) || this.anglePos > 85 && this.anglePos < 95 || this.anglePos < 295 && this.anglePos > 285) {
-			haxe_Log.trace("ech",{ fileName : "Player.hx", lineNumber : 96, className : "entity.Player", methodName : "update"});
 			this.CurrentZone = this.getCurrentGravZone();
 		}
-		haxe_Log.trace(this.anglePos,{ fileName : "Player.hx", lineNumber : 100, className : "entity.Player", methodName : "update"});
 		var Transform = new flixel_math_FlxPoint(0,this.radialPos + this.get_width() / 2);
 		var point = flixel_math_FlxPoint._pool.get().set(0,0);
 		point._inPool = false;
@@ -7770,12 +7772,11 @@ entity_Player.prototype = $extend(flixel_FlxSprite.prototype,{
 		} else if(this.angleVel > 0 && this.anglePos + this.angleVel * elapsed > this.CurrentZone.angleEnd && this.CurrentZone.LeftWall) {
 			this.angleVel = 0;
 		}
-		if((this.radialVel == 0 || this.IgnoreGravity) && flixel_FlxG.keys.checkKeyArrayState([32,85],2)) {
-			haxe_Log.trace("jump",{ fileName : "Player.hx", lineNumber : 134, className : "entity.Player", methodName : "update"});
+		if((this.radialVel == 0 || this.IgnoreGravity) && flixel_FlxG.keys.checkKeyArrayState([32],2)) {
 			this.radialVel = 100;
 			this.radialPos += 2;
 		}
-		if(flixel_FlxG.keys.checkKeyArrayState([38],1) && this.OnLadder()) {
+		if(flixel_FlxG.keys.checkKeyArrayState([38,87],1) && this.OnLadder()) {
 			this.radialPos += 2;
 			if(this.radialVel < 20) {
 				this.radialVel = 20;

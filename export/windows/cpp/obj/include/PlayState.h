@@ -66,6 +66,7 @@ class HXCPP_CLASS_ATTRIBUTES PlayState_obj : public  ::flixel::FlxState_obj
 		 ::flixel::text::FlxText text;
 		 ::flixel::FlxSprite MineEntrance;
 		 ::flixel::FlxSprite useIcon;
+		Bool IgnoreEnter;
 		void create();
 
 		void update(Float elapsed);

@@ -143,11 +143,15 @@
 static const Int _hx_array_data_6[] = {
 	(Int)13,
 };
+static const Int _hx_array_data_7[] = {
+	(Int)13,
+};
 
 void PlayState_obj::__construct( ::Dynamic MaxSize){
             	HX_STACK_FRAME("PlayState","new",0xf8bf96cf,"PlayState.new","PlayState.hx",17,0xb30d7781)
             	HX_STACK_THIS(this)
             	HX_STACK_ARG(MaxSize,"MaxSize")
+HXLINE(  41)		this->IgnoreEnter = false;
 HXLINE(  17)		super::__construct(MaxSize);
             	}
 
@@ -170,48 +174,48 @@ Dynamic PlayState_obj::__Create(hx::DynamicArray inArgs)
 void PlayState_obj::create(){
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_0, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",60,0xb30d7781)
-HXLINE(  60)			Bool _hx_tmp2 = (::Global_obj::Wrench == (int)0);
-HXDLIN(  60)			if (_hx_tmp2) {
-HXLINE(  62)				_gthis->openMessage(HX_("I don't think this is how it should look.\nOhh geez it's getting fuel EVERYWHERE, I really should fix this.\n A wrench and some tape should deal with the leak.",85,1b,11,07));
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",62,0xb30d7781)
+HXLINE(  62)			Bool _hx_tmp2 = (::Global_obj::Wrench == (int)0);
+HXDLIN(  62)			if (_hx_tmp2) {
+HXLINE(  64)				_gthis->openMessage(HX_("I don't think this is how it should look.\nOhh geez it's getting fuel EVERYWHERE, I really should fix this.\n A wrench and some tape should deal with the leak.",85,1b,11,07));
             			}
             			else {
-HXLINE(  64)				Bool _hx_tmp3 = (::Global_obj::Wrench == (int)1);
-HXDLIN(  64)				if (_hx_tmp3) {
-HXLINE(  66)					::Global_obj::Wrench = (int)2;
-HXLINE(  67)					_gthis->openMessage(HX_("Okay. I've undone some of the damage but this hunk of junk isn't going anywhere untill I replace the fuel cell.",c5,50,69,61));
+HXLINE(  66)				Bool _hx_tmp3 = (::Global_obj::Wrench == (int)1);
+HXDLIN(  66)				if (_hx_tmp3) {
+HXLINE(  68)					::Global_obj::Wrench = (int)2;
+HXLINE(  69)					_gthis->openMessage(HX_("Okay. I've undone some of the damage but this hunk of junk isn't going anywhere untill I replace the fuel cell.",c5,50,69,61));
             				}
             				else {
-HXLINE(  69)					Bool _hx_tmp4;
-HXDLIN(  69)					if ((::Global_obj::FuelCell != (int)1)) {
-HXLINE(  69)						_hx_tmp4 = (::Global_obj::Fin == (int)0);
+HXLINE(  71)					Bool _hx_tmp4;
+HXDLIN(  71)					if ((::Global_obj::FuelCell != (int)1)) {
+HXLINE(  71)						_hx_tmp4 = (::Global_obj::Fin == (int)0);
             					}
             					else {
-HXLINE(  69)						_hx_tmp4 = true;
+HXLINE(  71)						_hx_tmp4 = true;
             					}
-HXDLIN(  69)					if (_hx_tmp4) {
-HXLINE(  71)						_gthis->openMessage(HX_("Okay now that the tanks full I just need to fix this things aerodynamics. Best I start by replacing the broken fin.",7d,a7,1b,aa));
-HXLINE(  72)						::Global_obj::FuelCell = (int)2;
+HXDLIN(  71)					if (_hx_tmp4) {
+HXLINE(  73)						_gthis->openMessage(HX_("Okay now that the tanks full I just need to fix this things aerodynamics. Best I start by replacing the broken fin.",7d,a7,1b,aa));
+HXLINE(  74)						::Global_obj::FuelCell = (int)2;
             					}
             					else {
-HXLINE(  74)						Bool _hx_tmp5;
-HXDLIN(  74)						if ((::Global_obj::Fin != (int)1)) {
-HXLINE(  74)							_hx_tmp5 = (::Global_obj::FuelCell == (int)0);
+HXLINE(  76)						Bool _hx_tmp5;
+HXDLIN(  76)						if ((::Global_obj::Fin != (int)1)) {
+HXLINE(  76)							_hx_tmp5 = (::Global_obj::FuelCell == (int)0);
             						}
             						else {
-HXLINE(  74)							_hx_tmp5 = true;
+HXLINE(  76)							_hx_tmp5 = true;
             						}
-HXDLIN(  74)						if (_hx_tmp5) {
-HXLINE(  76)							_gthis->openMessage(HX_("Almost looks as good as new. All I need to add is a replacement nose cap and It'll be ready to fly.",12,8b,c0,6f));
-HXLINE(  77)							::Global_obj::Fin = (int)2;
+HXDLIN(  76)						if (_hx_tmp5) {
+HXLINE(  78)							_gthis->openMessage(HX_("Almost looks as good as new. All I need to add is a replacement nose cap and It'll be ready to fly.",12,8b,c0,6f));
+HXLINE(  79)							::Global_obj::Fin = (int)2;
             						}
             						else {
-HXLINE(  79)							Bool _hx_tmp6 = (::Global_obj::NoseCap == (int)1);
-HXDLIN(  79)							if (_hx_tmp6) {
-HXLINE(  81)								HX_VARI(  ::flixel::FlxState,nextState) =  ::Cutscene_obj::__new((int)1);
-HXDLIN(  81)								Bool _hx_tmp7 = ::flixel::FlxG_obj::game->_state->switchTo(nextState);
-HXDLIN(  81)								if (_hx_tmp7) {
-HXLINE(  81)									::flixel::FlxG_obj::game->_requestedState = nextState;
+HXLINE(  81)							Bool _hx_tmp6 = (::Global_obj::NoseCap == (int)1);
+HXDLIN(  81)							if (_hx_tmp6) {
+HXLINE(  83)								HX_VARI(  ::flixel::FlxState,nextState) =  ::Cutscene_obj::__new((int)1);
+HXDLIN(  83)								Bool _hx_tmp7 = ::flixel::FlxG_obj::game->_state->switchTo(nextState);
+HXDLIN(  83)								if (_hx_tmp7) {
+HXLINE(  83)									::flixel::FlxG_obj::game->_requestedState = nextState;
             								}
             							}
             						}
@@ -223,429 +227,449 @@ HXLINE(  81)									::flixel::FlxG_obj::game->_requestedState = nextState;
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_1, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",122,0xb30d7781)
-HXLINE( 122)			Bool _hx_tmp27 = (::Global_obj::Wrench == (int)0);
-HXDLIN( 122)			if (_hx_tmp27) {
-HXLINE( 124)				_gthis->openSubState( ::WrenchPickup_obj::__new(_gthis));
-HXLINE( 125)				::Global_obj::Wrench = (int)1;
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",124,0xb30d7781)
+HXLINE( 124)			Bool _hx_tmp27 = (::Global_obj::Wrench == (int)0);
+HXDLIN( 124)			if (_hx_tmp27) {
+HXLINE( 126)				_gthis->openSubState( ::WrenchPickup_obj::__new(_gthis));
+HXLINE( 127)				::Global_obj::Wrench = (int)1;
             			}
             			else {
-HXLINE( 129)				_gthis->openMessage(HX_("I've already got the wrench and tape.",ca,43,de,74));
+HXLINE( 131)				_gthis->openMessage(HX_("I've already got the wrench and tape.",ca,43,de,74));
             			}
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_2, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",136,0xb30d7781)
-HXLINE( 136)			_gthis->openMessage(HX_("What's this. Someone Tucked a code in here '25978'",d8,bc,7e,2c));
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",138,0xb30d7781)
+HXLINE( 138)			_gthis->openMessage(HX_("What's this. Someone Tucked a code in here '25978'",d8,bc,7e,2c));
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_3, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",142,0xb30d7781)
-HXLINE( 142)			_gthis->openSubState( ::TrapDoorCode_obj::__new(_gthis));
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",144,0xb30d7781)
+HXLINE( 144)			_gthis->openSubState( ::TrapDoorCode_obj::__new(_gthis));
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_4, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",148,0xb30d7781)
-HXLINE( 149)			_gthis->openMessage(HX_("this stuff is lethal, I'd better be carefull with is.",6f,77,f6,e1));
-HXLINE( 150)			::Global_obj::TNT = true;
-HXLINE( 151)			_gthis->Interactables->remove(_gthis->TNT);
-HXLINE( 152)			_gthis->remove(_gthis->TNT,null()).StaticCast<  ::flixel::FlxBasic >();
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",150,0xb30d7781)
+HXLINE( 151)			_gthis->openMessage(HX_("TNT is lethal, I'd better be carefull with is.",87,92,10,22));
+HXLINE( 152)			::Global_obj::TNT = true;
+HXLINE( 153)			_gthis->Interactables->remove(_gthis->TNT);
+HXLINE( 154)			_gthis->remove(_gthis->TNT,null()).StaticCast<  ::flixel::FlxBasic >();
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_5, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",159,0xb30d7781)
-HXLINE( 159)			Bool _hx_tmp38 = (::Global_obj::TNT == true);
-HXDLIN( 159)			if (_hx_tmp38) {
-HXLINE( 161)				_gthis->openMessage(HX_("That was dangerous.",74,ad,aa,da));
-HXLINE( 162)				_gthis->Interactables->remove(_gthis->Rockwall);
-HXLINE( 163)				_gthis->remove(_gthis->Rockwall,null()).StaticCast<  ::flixel::FlxBasic >();
-HXLINE( 164)				_gthis->player->RockWall->LeftWall = false;
-HXLINE( 165)				_gthis->player->CurrentZone = _gthis->player->getCurrentGravZone();
-HXLINE( 166)				::flixel::FlxG_obj::sound->play(HX_("assets/sounds/kaboom.ogg",01,35,25,09),null(),null(),null(),null(),null());
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",161,0xb30d7781)
+HXLINE( 161)			Bool _hx_tmp38 = (::Global_obj::TNT == true);
+HXDLIN( 161)			if (_hx_tmp38) {
+HXLINE( 163)				_gthis->openMessage(HX_("That was dangerous.",74,ad,aa,da));
+HXLINE( 164)				_gthis->Interactables->remove(_gthis->Rockwall);
+HXLINE( 165)				_gthis->remove(_gthis->Rockwall,null()).StaticCast<  ::flixel::FlxBasic >();
+HXLINE( 166)				_gthis->player->RockWall->LeftWall = false;
+HXLINE( 167)				_gthis->player->CurrentZone = _gthis->player->getCurrentGravZone();
+HXLINE( 168)				::flixel::FlxG_obj::sound->play(HX_("assets/sounds/kaboom.ogg",01,35,25,09),null(),null(),null(),null(),null());
             			}
             			else {
-HXLINE( 170)				_gthis->openMessage(HX_("The rock is lose. I just need something to get through it",51,b1,89,4d));
+HXLINE( 172)				_gthis->openMessage(HX_("The rock is lose. I just need something to get through it",51,b1,89,4d));
             			}
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_6, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",178,0xb30d7781)
-HXLINE( 178)			Bool _hx_tmp42 = (::Global_obj::FuelCell == (int)0);
-HXDLIN( 178)			if (_hx_tmp42) {
-HXLINE( 180)				_gthis->openSubState( ::FuelCellGet_obj::__new(_gthis));
-HXLINE( 181)				::Global_obj::FuelCell = (int)1;
-HXLINE( 182)				_gthis->remove(_gthis->FuelCell,null()).StaticCast<  ::flixel::FlxBasic >();
-HXLINE( 183)				_gthis->Interactables->remove(_gthis->FuelCell);
-HXLINE( 184)				_gthis->openMessage(HX_("alright now that this thing is calibrated I should be able to replace the fuel I lost.\n Oh hey there was a key taucked behind it.",ab,f1,68,ff));
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",180,0xb30d7781)
+HXLINE( 180)			Bool _hx_tmp42 = (::Global_obj::FuelCell == (int)0);
+HXDLIN( 180)			if (_hx_tmp42) {
+HXLINE( 182)				_gthis->openSubState( ::FuelCellGet_obj::__new(_gthis));
+HXLINE( 183)				::Global_obj::FuelCell = (int)1;
+HXLINE( 184)				_gthis->remove(_gthis->FuelCell,null()).StaticCast<  ::flixel::FlxBasic >();
+HXLINE( 185)				_gthis->Interactables->remove(_gthis->FuelCell);
+HXLINE( 186)				_gthis->openMessage(HX_("alright now that this thing is calibrated I should be able to replace the fuel I lost.\n Oh hey there was a key tucked behind it.",18,23,38,b7));
             			}
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_7, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",192,0xb30d7781)
-HXLINE( 192)			Bool _hx_tmp45 = (::Global_obj::FuelCell >= (int)1);
-HXDLIN( 192)			if (_hx_tmp45) {
-HXLINE( 194)				_gthis->openMessage(HX_("Hey this key seems to have done the trick.",ef,ba,cd,bf));
-HXLINE( 195)				_gthis->remove(_gthis->KeyDoor,null()).StaticCast<  ::flixel::FlxBasic >();
-HXLINE( 196)				_gthis->Interactables->remove(_gthis->KeyDoor);
-HXLINE( 197)				_gthis->player->KeyDoor->LeftWall = false;
-HXLINE( 198)				_gthis->player->CurrentZone = _gthis->player->getCurrentGravZone();
-HXLINE( 199)				::flixel::FlxG_obj::sound->play(HX_("assets/sounds/gj2.ogg",d1,84,af,06),null(),null(),null(),null(),null());
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",194,0xb30d7781)
+HXLINE( 194)			Bool _hx_tmp45 = (::Global_obj::FuelCell >= (int)1);
+HXDLIN( 194)			if (_hx_tmp45) {
+HXLINE( 196)				_gthis->openMessage(HX_("Hey this key seems to have done the trick.",ef,ba,cd,bf));
+HXLINE( 197)				_gthis->remove(_gthis->KeyDoor,null()).StaticCast<  ::flixel::FlxBasic >();
+HXLINE( 198)				_gthis->Interactables->remove(_gthis->KeyDoor);
+HXLINE( 199)				_gthis->player->KeyDoor->LeftWall = false;
+HXLINE( 200)				_gthis->player->CurrentZone = _gthis->player->getCurrentGravZone();
+HXLINE( 201)				::flixel::FlxG_obj::sound->play(HX_("assets/sounds/gj2.ogg",d1,84,af,06),null(),null(),null(),null(),null());
             			}
             			else {
-HXLINE( 203)				_gthis->openMessage(HX_("It's locked",d3,06,11,42));
+HXLINE( 205)				_gthis->openMessage(HX_("It's locked",d3,06,11,42));
             			}
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_8, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",210,0xb30d7781)
-HXLINE( 211)			::Global_obj::Fin = (int)1;
-HXLINE( 212)			_gthis->openMessage(HX_("It's not the same model as the original but it will have to do.",40,ed,45,a1));
-HXLINE( 213)			_gthis->Interactables->remove(_gthis->Fin);
-HXLINE( 214)			_gthis->remove(_gthis->Fin,null()).StaticCast<  ::flixel::FlxBasic >();
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",212,0xb30d7781)
+HXLINE( 213)			::Global_obj::Fin = (int)1;
+HXLINE( 214)			_gthis->openMessage(HX_("It's not the same model as the original but it will have to do.",40,ed,45,a1));
+HXLINE( 215)			_gthis->Interactables->remove(_gthis->Fin);
+HXLINE( 216)			_gthis->remove(_gthis->Fin,null()).StaticCast<  ::flixel::FlxBasic >();
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_9, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",221,0xb30d7781)
-HXLINE( 221)			_gthis->openSubState( ::CodeDoorKeypad_obj::__new(_gthis));
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",223,0xb30d7781)
+HXLINE( 223)			_gthis->openSubState( ::CodeDoorKeypad_obj::__new(_gthis));
             		}
             		HX_END_LOCAL_FUNC0((void))
 
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_10, ::PlayState,_gthis) HXARGC(0)
             		void _hx_run(){
-            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",228,0xb30d7781)
-HXLINE( 229)			_gthis->openMessage(HX_("This is perfect.",d5,c8,04,e4));
-HXLINE( 230)			::Global_obj::NoseCap = (int)1;
-HXLINE( 231)			_gthis->Interactables->remove(_gthis->NoseCap);
-HXLINE( 232)			_gthis->remove(_gthis->NoseCap,null()).StaticCast<  ::flixel::FlxBasic >();
+            			HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",230,0xb30d7781)
+HXLINE( 231)			_gthis->openMessage(HX_("This is perfect.",d5,c8,04,e4));
+HXLINE( 232)			::Global_obj::NoseCap = (int)1;
+HXLINE( 233)			_gthis->Interactables->remove(_gthis->NoseCap);
+HXLINE( 234)			_gthis->remove(_gthis->NoseCap,null()).StaticCast<  ::flixel::FlxBasic >();
             		}
             		HX_END_LOCAL_FUNC0((void))
 
-            	HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",42,0xb30d7781)
+            	HX_STACK_FRAME("PlayState","create",0x82220fed,"PlayState.create","PlayState.hx",44,0xb30d7781)
             	HX_STACK_THIS(this)
-HXLINE(  41)		HX_VARI(  ::PlayState,_gthis) = hx::ObjectPtr<OBJ_>(this);
-HXLINE(  43)		this->textBox =  ::flixel::FlxSprite_obj::__new((int)0,(int)520,null());
-HXLINE(  44)		this->textBox->makeGraphic((int)1280,(int)200,(int)-16777216,null(),null());
-HXLINE(  46)		this->text =  ::flixel::text::FlxText_obj::__new((int)10,(int)530,(int)1260,HX_("test",52,c8,f9,4c),(int)32,null());
-HXLINE(  47)		this->text->set_color((int)-1);
-HXLINE(  48)		this->text->set_alignment(HX_("center",d5,25,db,05));
-HXLINE(  50)		::flixel::FlxG_obj::fixedTimestep = false;
-HXLINE(  53)		this->player =  ::entity::Player_obj::__new((int)0,(int)0,null());
-HXLINE(  56)		this->Interactables = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  57)		Float _hx_tmp = (((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2) - (int)45);
-HXDLIN(  57)		Float _hx_tmp1 = (::Global_obj::Surface - (int)10);
-HXDLIN(  57)		HX_VARI(  ::entity::Interactable,holder) =  ::entity::Interactable_obj::__new((int)-30,_hx_tmp,HX_("assets/images/rocket.png",fa,41,f0,12),(int)0,(int)10,_hx_tmp1,(int)100000, ::Dynamic(new _hx_Closure_0(_gthis)));
-HXLINE(  84)		holder->set_angle((int)160);
-HXLINE(  85)		this->Interactables->push(holder);
-HXLINE(  88)		Float _hx_tmp8 = (::Global_obj::PlanetPos->x - ((Float)78.5));
-HXDLIN(  88)		Float _hx_tmp9 = (::Global_obj::PlanetPos->y + (int)260);
-HXDLIN(  88)		this->add( ::flixel::FlxSprite_obj::__new(_hx_tmp8,_hx_tmp9,HX_("assets/images/BedroomInterior.png",7c,b2,9c,dd)));
-HXLINE(  90)		HX_VARI(  ::flixel::FlxSprite,holderSprite) =  ::flixel::FlxSprite_obj::__new((int)0,(int)0,HX_("assets/images/MineEntranceInterior.png",ff,9f,47,a2));
-HXLINE(  91)		Float _hx_tmp10 = ::Global_obj::Surface;
-HXDLIN(  91)		Float _hx_tmp11 = holderSprite->get_height();
-HXDLIN(  91)		HX_VARI(  ::flixel::math::FlxPoint,Transform) =  ::flixel::math::FlxPoint_obj::__new((int)0,((_hx_tmp10 + _hx_tmp11) - (int)200));
-HXLINE(  92)		HX_VARI(  ::flixel::math::FlxPoint,point) = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
-HXDLIN(  92)		point->_inPool = false;
-HXDLIN(  92)		point->_weak = true;
-HXDLIN(  92)		Transform->rotate(point,(int)-327);
-HXLINE(  93)		Float _hx_tmp12 = ((::Global_obj::PlanetPos->x - Transform->x) - ((Float)0.5));
-HXDLIN(  93)		Float _hx_tmp13 = ((::Global_obj::PlanetPos->y - Transform->y) - ((Float)37.5));
-HXDLIN(  93)		holderSprite->setPosition(_hx_tmp12,_hx_tmp13);
-HXLINE(  94)		this->MineEntrance = holderSprite;
-HXLINE(  95)		this->add(holderSprite);
-HXLINE(  98)		this->Covers = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  99)		Float _hx_tmp14 = (::Global_obj::Surface - (int)1);
-HXDLIN(  99)		Float _hx_tmp15 = (::Global_obj::Surface + (int)100);
-HXDLIN(  99)		HX_VARI(  ::entity::Cover,holderCover) =  ::entity::Cover_obj::__new((int)165,(int)195,_hx_tmp14,_hx_tmp15,HX_("assets/images/BedroomCover.png",41,2a,93,0e));
-HXLINE( 100)		Float _hx_tmp16 = (::Global_obj::PlanetPos->x - ((Float)78.5));
-HXDLIN( 100)		Float _hx_tmp17 = (::Global_obj::PlanetPos->y + (int)260);
-HXDLIN( 100)		holderCover->setPosition(_hx_tmp16,_hx_tmp17);
-HXLINE( 101)		this->Covers->push(holderCover);
-HXLINE( 103)		Float _hx_tmp18 = (::Global_obj::Surface - (int)1);
-HXDLIN( 103)		Float _hx_tmp19 = (::Global_obj::Surface + (int)100);
-HXDLIN( 103)		holderCover =  ::entity::Cover_obj::__new((int)285,(int)330,_hx_tmp18,_hx_tmp19,HX_("assets/images/MineEntranceCover.png",de,fc,bd,76));
-HXLINE( 104)		Float _hx_tmp20 = ::Global_obj::Surface;
-HXDLIN( 104)		Float _hx_tmp21 = holderSprite->get_height();
-HXDLIN( 104)		Transform =  ::flixel::math::FlxPoint_obj::__new((int)0,((_hx_tmp20 + _hx_tmp21) - (int)200));
-HXLINE( 105)		HX_VARI_NAME(  ::flixel::math::FlxPoint,point1,"point") = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
-HXDLIN( 105)		point1->_inPool = false;
-HXDLIN( 105)		point1->_weak = true;
-HXDLIN( 105)		Transform->rotate(point1,(int)-327);
-HXLINE( 106)		Float _hx_tmp22 = ((::Global_obj::PlanetPos->x - Transform->x) - ((Float)0.5));
-HXDLIN( 106)		Float _hx_tmp23 = ((::Global_obj::PlanetPos->y - Transform->y) - ((Float)37.5));
-HXDLIN( 106)		holderCover->setPosition(_hx_tmp22,_hx_tmp23);
-HXLINE( 107)		this->Covers->push(holderCover);
-HXLINE( 109)		{
-HXLINE( 109)			HX_VARI( Int,_g) = (int)0;
-HXDLIN( 109)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->Covers;
-HXDLIN( 109)			while((_g < _g1->length)){
-HXLINE( 109)				HX_VARI(  ::entity::Cover,a) = _g1->__get(_g).StaticCast<  ::entity::Cover >();
-HXDLIN( 109)				++_g;
-HXLINE( 111)				this->add(a);
+HXLINE(  43)		HX_VARI(  ::PlayState,_gthis) = hx::ObjectPtr<OBJ_>(this);
+HXLINE(  45)		this->textBox =  ::flixel::FlxSprite_obj::__new((int)0,(int)520,null());
+HXLINE(  46)		this->textBox->makeGraphic((int)1280,(int)200,(int)-16777216,null(),null());
+HXLINE(  48)		this->text =  ::flixel::text::FlxText_obj::__new((int)10,(int)530,(int)1260,HX_("test",52,c8,f9,4c),(int)32,null());
+HXLINE(  49)		this->text->set_color((int)-1);
+HXLINE(  50)		this->text->set_alignment(HX_("center",d5,25,db,05));
+HXLINE(  52)		::flixel::FlxG_obj::fixedTimestep = false;
+HXLINE(  55)		this->player =  ::entity::Player_obj::__new((int)0,(int)0,null());
+HXLINE(  58)		this->Interactables = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  59)		Float _hx_tmp = (((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2) - (int)45);
+HXDLIN(  59)		Float _hx_tmp1 = (::Global_obj::Surface - (int)10);
+HXDLIN(  59)		HX_VARI(  ::entity::Interactable,holder) =  ::entity::Interactable_obj::__new((int)-30,_hx_tmp,HX_("assets/images/rocket.png",fa,41,f0,12),(int)0,(int)10,_hx_tmp1,(int)100000, ::Dynamic(new _hx_Closure_0(_gthis)));
+HXLINE(  86)		holder->set_angle((int)160);
+HXLINE(  87)		this->Interactables->push(holder);
+HXLINE(  90)		Float _hx_tmp8 = (::Global_obj::PlanetPos->x - ((Float)78.5));
+HXDLIN(  90)		Float _hx_tmp9 = (::Global_obj::PlanetPos->y + (int)260);
+HXDLIN(  90)		this->add( ::flixel::FlxSprite_obj::__new(_hx_tmp8,_hx_tmp9,HX_("assets/images/BedroomInterior.png",7c,b2,9c,dd)));
+HXLINE(  92)		HX_VARI(  ::flixel::FlxSprite,holderSprite) =  ::flixel::FlxSprite_obj::__new((int)0,(int)0,HX_("assets/images/MineEntranceInterior.png",ff,9f,47,a2));
+HXLINE(  93)		Float _hx_tmp10 = ::Global_obj::Surface;
+HXDLIN(  93)		Float _hx_tmp11 = holderSprite->get_height();
+HXDLIN(  93)		HX_VARI(  ::flixel::math::FlxPoint,Transform) =  ::flixel::math::FlxPoint_obj::__new((int)0,((_hx_tmp10 + _hx_tmp11) - (int)200));
+HXLINE(  94)		HX_VARI(  ::flixel::math::FlxPoint,point) = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
+HXDLIN(  94)		point->_inPool = false;
+HXDLIN(  94)		point->_weak = true;
+HXDLIN(  94)		Transform->rotate(point,(int)-327);
+HXLINE(  95)		Float _hx_tmp12 = ((::Global_obj::PlanetPos->x - Transform->x) - ((Float)0.5));
+HXDLIN(  95)		Float _hx_tmp13 = ((::Global_obj::PlanetPos->y - Transform->y) - ((Float)37.5));
+HXDLIN(  95)		holderSprite->setPosition(_hx_tmp12,_hx_tmp13);
+HXLINE(  96)		this->MineEntrance = holderSprite;
+HXLINE(  97)		this->add(holderSprite);
+HXLINE( 100)		this->Covers = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 101)		Float _hx_tmp14 = (::Global_obj::Surface - (int)1);
+HXDLIN( 101)		Float _hx_tmp15 = (::Global_obj::Surface + (int)100);
+HXDLIN( 101)		HX_VARI(  ::entity::Cover,holderCover) =  ::entity::Cover_obj::__new((int)165,(int)195,_hx_tmp14,_hx_tmp15,HX_("assets/images/BedroomCover.png",41,2a,93,0e));
+HXLINE( 102)		Float _hx_tmp16 = (::Global_obj::PlanetPos->x - ((Float)78.5));
+HXDLIN( 102)		Float _hx_tmp17 = (::Global_obj::PlanetPos->y + (int)260);
+HXDLIN( 102)		holderCover->setPosition(_hx_tmp16,_hx_tmp17);
+HXLINE( 103)		this->Covers->push(holderCover);
+HXLINE( 105)		Float _hx_tmp18 = (::Global_obj::Surface - (int)1);
+HXDLIN( 105)		Float _hx_tmp19 = (::Global_obj::Surface + (int)100);
+HXDLIN( 105)		holderCover =  ::entity::Cover_obj::__new((int)285,(int)330,_hx_tmp18,_hx_tmp19,HX_("assets/images/MineEntranceCover.png",de,fc,bd,76));
+HXLINE( 106)		Float _hx_tmp20 = ::Global_obj::Surface;
+HXDLIN( 106)		Float _hx_tmp21 = holderSprite->get_height();
+HXDLIN( 106)		Transform =  ::flixel::math::FlxPoint_obj::__new((int)0,((_hx_tmp20 + _hx_tmp21) - (int)200));
+HXLINE( 107)		HX_VARI_NAME(  ::flixel::math::FlxPoint,point1,"point") = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
+HXDLIN( 107)		point1->_inPool = false;
+HXDLIN( 107)		point1->_weak = true;
+HXDLIN( 107)		Transform->rotate(point1,(int)-327);
+HXLINE( 108)		Float _hx_tmp22 = ((::Global_obj::PlanetPos->x - Transform->x) - ((Float)0.5));
+HXDLIN( 108)		Float _hx_tmp23 = ((::Global_obj::PlanetPos->y - Transform->y) - ((Float)37.5));
+HXDLIN( 108)		holderCover->setPosition(_hx_tmp22,_hx_tmp23);
+HXLINE( 109)		this->Covers->push(holderCover);
+HXLINE( 111)		{
+HXLINE( 111)			HX_VARI( Int,_g) = (int)0;
+HXDLIN( 111)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->Covers;
+HXDLIN( 111)			while((_g < _g1->length)){
+HXLINE( 111)				HX_VARI(  ::entity::Cover,a) = _g1->__get(_g).StaticCast<  ::entity::Cover >();
+HXDLIN( 111)				++_g;
+HXLINE( 113)				this->add(a);
             			}
             		}
-HXLINE( 115)		this->Planet =  ::flixel::FlxSprite_obj::__new((int)365,(int)85,HX_("assets/images/planet.png",3e,97,e2,23));
-HXLINE( 116)		this->add(this->Planet);
-HXLINE( 119)		Float _hx_tmp24 = (((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2) + (int)92);
-HXDLIN( 119)		Float _hx_tmp25 = (((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2) + (int)181);
-HXDLIN( 119)		Float _hx_tmp26 = (::Global_obj::Surface - (int)10);
-HXDLIN( 119)		holder =  ::entity::Interactable_obj::__new(_hx_tmp24,_hx_tmp25,HX_("assets/images/table.png",3e,ef,4a,49),(int)60,(int)65,(int)189,_hx_tmp26, ::Dynamic(new _hx_Closure_1(_gthis)));
-HXLINE( 132)		this->Interactables->push(holder);
-HXLINE( 133)		Float _hx_tmp28 = (::Global_obj::Surface - (int)1);
-HXDLIN( 133)		Float _hx_tmp29 = (::Global_obj::Surface + (int)20);
-HXDLIN( 133)		holder =  ::entity::Interactable_obj::__new((int)0,(int)0,HX_("assets/images/empty.png",3d,1d,8e,98),(int)180,(int)185,_hx_tmp28,_hx_tmp29, ::Dynamic(new _hx_Closure_2(_gthis)));
-HXLINE( 138)		this->Interactables->push(holder);
-HXLINE( 139)		Float _hx_tmp30 = (::Global_obj::Surface - (int)1);
-HXDLIN( 139)		Float _hx_tmp31 = (::Global_obj::Surface + (int)20);
-HXDLIN( 139)		holder =  ::entity::Interactable_obj::__new((int)0,(int)0,HX_("assets/images/empty.png",3d,1d,8e,98),(int)290,(int)300,_hx_tmp30,_hx_tmp31, ::Dynamic(new _hx_Closure_3(_gthis)));
-HXLINE( 144)		this->TrapDoor = holder;
-HXLINE( 145)		this->Interactables->push(holder);
-HXLINE( 146)		Float _hx_tmp32 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 146)		Float _hx_tmp33 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 146)		Float _hx_tmp34 = (::Global_obj::Surface - (int)10);
-HXDLIN( 146)		holder =  ::entity::Interactable_obj::__new(_hx_tmp32,_hx_tmp33,HX_("assets/images/boombox.png",30,c6,97,ba),(int)270,(int)275,(int)189,_hx_tmp34, ::Dynamic(new _hx_Closure_4(_gthis)));
-HXLINE( 154)		this->TNT = holder;
-HXLINE( 155)		this->Interactables->push(holder);
-HXLINE( 156)		Float _hx_tmp35 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 156)		Float _hx_tmp36 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 156)		Float _hx_tmp37 = (::Global_obj::Surface - (int)10);
-HXDLIN( 156)		holder =  ::entity::Interactable_obj::__new(_hx_tmp35,_hx_tmp36,HX_("assets/images/rockWall.png",35,c0,65,fc),(int)95,(int)100,(int)189,_hx_tmp37, ::Dynamic(new _hx_Closure_5(_gthis)));
-HXLINE( 173)		this->Rockwall = holder;
-HXLINE( 174)		this->Interactables->push(holder);
-HXLINE( 175)		Float _hx_tmp39 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 175)		Float _hx_tmp40 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 175)		Float _hx_tmp41 = (::Global_obj::Surface - (int)10);
-HXDLIN( 175)		holder =  ::entity::Interactable_obj::__new(_hx_tmp39,_hx_tmp40,HX_("assets/images/fuelCell.png",9e,69,8e,6e),(int)125,(int)130,(int)189,_hx_tmp41, ::Dynamic(new _hx_Closure_6(_gthis)));
-HXLINE( 187)		this->FuelCell = holder;
-HXLINE( 188)		this->Interactables->push(holder);
-HXLINE( 189)		Float _hx_tmp43 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 189)		Float _hx_tmp44 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 189)		holder =  ::entity::Interactable_obj::__new(_hx_tmp43,_hx_tmp44,HX_("assets/images/keydoor.png",7d,80,58,a2),(int)300,(int)310,(int)189,(int)210, ::Dynamic(new _hx_Closure_7(_gthis)));
-HXLINE( 206)		this->KeyDoor = holder;
-HXLINE( 207)		this->Interactables->push(holder);
-HXLINE( 208)		Float _hx_tmp46 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 208)		Float _hx_tmp47 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 208)		holder =  ::entity::Interactable_obj::__new(_hx_tmp46,_hx_tmp47,HX_("assets/images/fin.png",3b,04,c5,f3),(int)290,(int)310,(int)100,(int)130, ::Dynamic(new _hx_Closure_8(_gthis)));
-HXLINE( 216)		this->Fin = holder;
-HXLINE( 217)		this->Interactables->push(holder);
-HXLINE( 218)		Float _hx_tmp48 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 218)		Float _hx_tmp49 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 218)		holder =  ::entity::Interactable_obj::__new(_hx_tmp48,_hx_tmp49,HX_("assets/images/codedoor.png",01,30,06,c6),(int)350,(int)360,(int)189,(int)210, ::Dynamic(new _hx_Closure_9(_gthis)));
-HXLINE( 223)		this->CodeDoor = holder;
-HXLINE( 224)		this->Interactables->push(holder);
-HXLINE( 225)		this->Interactables->push(holder);
-HXLINE( 226)		Float _hx_tmp50 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
-HXDLIN( 226)		Float _hx_tmp51 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
-HXDLIN( 226)		holder =  ::entity::Interactable_obj::__new(_hx_tmp50,_hx_tmp51,HX_("assets/images/nosecap.png",cf,a5,98,3c),(int)10,(int)20,(int)189,(int)210, ::Dynamic(new _hx_Closure_10(_gthis)));
-HXLINE( 234)		this->NoseCap = holder;
-HXLINE( 235)		this->Interactables->push(holder);
-HXLINE( 238)		{
-HXLINE( 238)			HX_VARI_NAME( Int,_g2,"_g") = (int)0;
-HXDLIN( 238)			HX_VARI_NAME( ::Array< ::Dynamic>,_g11,"_g1") = this->player->Ladders;
-HXDLIN( 238)			while((_g2 < _g11->length)){
-HXLINE( 238)				HX_VARI_NAME(  ::entity::Ladder,a1,"a") = _g11->__get(_g2).StaticCast<  ::entity::Ladder >();
-HXDLIN( 238)				++_g2;
-HXLINE( 240)				{
-HXLINE( 240)					HX_VARI_NAME( Int,_g21,"_g2") = (int)0;
-HXDLIN( 240)					HX_VARI( ::Array< ::Dynamic>,_g3) = a1->members;
-HXDLIN( 240)					while((_g21 < _g3->length)){
-HXLINE( 240)						HX_VARI(  ::flixel::FlxSprite,b) = _g3->__get(_g21).StaticCast<  ::flixel::FlxSprite >();
-HXDLIN( 240)						++_g21;
-HXLINE( 242)						this->add(b);
+HXLINE( 117)		this->Planet =  ::flixel::FlxSprite_obj::__new((int)365,(int)85,HX_("assets/images/planet.png",3e,97,e2,23));
+HXLINE( 118)		this->add(this->Planet);
+HXLINE( 121)		Float _hx_tmp24 = (((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2) + (int)92);
+HXDLIN( 121)		Float _hx_tmp25 = (((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2) + (int)181);
+HXDLIN( 121)		Float _hx_tmp26 = (::Global_obj::Surface - (int)10);
+HXDLIN( 121)		holder =  ::entity::Interactable_obj::__new(_hx_tmp24,_hx_tmp25,HX_("assets/images/table.png",3e,ef,4a,49),(int)60,(int)65,(int)189,_hx_tmp26, ::Dynamic(new _hx_Closure_1(_gthis)));
+HXLINE( 134)		this->Interactables->push(holder);
+HXLINE( 135)		Float _hx_tmp28 = (::Global_obj::Surface - (int)1);
+HXDLIN( 135)		Float _hx_tmp29 = (::Global_obj::Surface + (int)20);
+HXDLIN( 135)		holder =  ::entity::Interactable_obj::__new((int)0,(int)0,HX_("assets/images/empty.png",3d,1d,8e,98),(int)180,(int)185,_hx_tmp28,_hx_tmp29, ::Dynamic(new _hx_Closure_2(_gthis)));
+HXLINE( 140)		this->Interactables->push(holder);
+HXLINE( 141)		Float _hx_tmp30 = (::Global_obj::Surface - (int)1);
+HXDLIN( 141)		Float _hx_tmp31 = (::Global_obj::Surface + (int)20);
+HXDLIN( 141)		holder =  ::entity::Interactable_obj::__new((int)0,(int)0,HX_("assets/images/empty.png",3d,1d,8e,98),(int)290,(int)300,_hx_tmp30,_hx_tmp31, ::Dynamic(new _hx_Closure_3(_gthis)));
+HXLINE( 146)		this->TrapDoor = holder;
+HXLINE( 147)		this->Interactables->push(holder);
+HXLINE( 148)		Float _hx_tmp32 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 148)		Float _hx_tmp33 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 148)		Float _hx_tmp34 = (::Global_obj::Surface - (int)10);
+HXDLIN( 148)		holder =  ::entity::Interactable_obj::__new(_hx_tmp32,_hx_tmp33,HX_("assets/images/boombox.png",30,c6,97,ba),(int)270,(int)275,(int)189,_hx_tmp34, ::Dynamic(new _hx_Closure_4(_gthis)));
+HXLINE( 156)		this->TNT = holder;
+HXLINE( 157)		this->Interactables->push(holder);
+HXLINE( 158)		Float _hx_tmp35 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 158)		Float _hx_tmp36 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 158)		Float _hx_tmp37 = (::Global_obj::Surface - (int)10);
+HXDLIN( 158)		holder =  ::entity::Interactable_obj::__new(_hx_tmp35,_hx_tmp36,HX_("assets/images/rockWall.png",35,c0,65,fc),(int)95,(int)100,(int)189,_hx_tmp37, ::Dynamic(new _hx_Closure_5(_gthis)));
+HXLINE( 175)		this->Rockwall = holder;
+HXLINE( 176)		this->Interactables->push(holder);
+HXLINE( 177)		Float _hx_tmp39 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 177)		Float _hx_tmp40 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 177)		Float _hx_tmp41 = (::Global_obj::Surface - (int)10);
+HXDLIN( 177)		holder =  ::entity::Interactable_obj::__new(_hx_tmp39,_hx_tmp40,HX_("assets/images/fuelCell.png",9e,69,8e,6e),(int)125,(int)130,(int)189,_hx_tmp41, ::Dynamic(new _hx_Closure_6(_gthis)));
+HXLINE( 189)		this->FuelCell = holder;
+HXLINE( 190)		this->Interactables->push(holder);
+HXLINE( 191)		Float _hx_tmp43 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 191)		Float _hx_tmp44 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 191)		holder =  ::entity::Interactable_obj::__new(_hx_tmp43,_hx_tmp44,HX_("assets/images/keydoor.png",7d,80,58,a2),(int)300,(int)310,(int)189,(int)210, ::Dynamic(new _hx_Closure_7(_gthis)));
+HXLINE( 208)		this->KeyDoor = holder;
+HXLINE( 209)		this->Interactables->push(holder);
+HXLINE( 210)		Float _hx_tmp46 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 210)		Float _hx_tmp47 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 210)		holder =  ::entity::Interactable_obj::__new(_hx_tmp46,_hx_tmp47,HX_("assets/images/fin.png",3b,04,c5,f3),(int)290,(int)310,(int)100,(int)130, ::Dynamic(new _hx_Closure_8(_gthis)));
+HXLINE( 218)		this->Fin = holder;
+HXLINE( 219)		this->Interactables->push(holder);
+HXLINE( 220)		Float _hx_tmp48 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 220)		Float _hx_tmp49 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 220)		holder =  ::entity::Interactable_obj::__new(_hx_tmp48,_hx_tmp49,HX_("assets/images/codedoor.png",01,30,06,c6),(int)350,(int)360,(int)189,(int)210, ::Dynamic(new _hx_Closure_9(_gthis)));
+HXLINE( 225)		this->CodeDoor = holder;
+HXLINE( 226)		this->Interactables->push(holder);
+HXLINE( 227)		this->Interactables->push(holder);
+HXLINE( 228)		Float _hx_tmp50 = ((Float)-(::Global_obj::PlanetSize->x) / (Float)(int)2);
+HXDLIN( 228)		Float _hx_tmp51 = ((Float)-(::Global_obj::PlanetSize->y) / (Float)(int)2);
+HXDLIN( 228)		holder =  ::entity::Interactable_obj::__new(_hx_tmp50,_hx_tmp51,HX_("assets/images/nosecap.png",cf,a5,98,3c),(int)10,(int)20,(int)189,(int)210, ::Dynamic(new _hx_Closure_10(_gthis)));
+HXLINE( 236)		this->NoseCap = holder;
+HXLINE( 237)		this->Interactables->push(holder);
+HXLINE( 240)		{
+HXLINE( 240)			HX_VARI_NAME( Int,_g2,"_g") = (int)0;
+HXDLIN( 240)			HX_VARI_NAME( ::Array< ::Dynamic>,_g11,"_g1") = this->player->Ladders;
+HXDLIN( 240)			while((_g2 < _g11->length)){
+HXLINE( 240)				HX_VARI_NAME(  ::entity::Ladder,a1,"a") = _g11->__get(_g2).StaticCast<  ::entity::Ladder >();
+HXDLIN( 240)				++_g2;
+HXLINE( 242)				{
+HXLINE( 242)					HX_VARI_NAME( Int,_g21,"_g2") = (int)0;
+HXDLIN( 242)					HX_VARI( ::Array< ::Dynamic>,_g3) = a1->members;
+HXDLIN( 242)					while((_g21 < _g3->length)){
+HXLINE( 242)						HX_VARI(  ::flixel::FlxSprite,b) = _g3->__get(_g21).StaticCast<  ::flixel::FlxSprite >();
+HXDLIN( 242)						++_g21;
+HXLINE( 244)						this->add(b);
             					}
             				}
             			}
             		}
-HXLINE( 247)		this->add(this->player);
-HXLINE( 250)		this->useIcon =  ::flixel::FlxSprite_obj::__new((int)0,(int)0,HX_("assets/images/use.png",b7,5c,7d,34));
-HXLINE( 253)		Float _hx_tmp52 = (::Global_obj::Surface - (int)5);
-HXDLIN( 253)		this->Covers->push( ::entity::Cover_obj::__new((int)60,(int)103,(int)185,_hx_tmp52,HX_("assets/images/coverWrenchT1.png",8d,94,e1,a2)));
-HXLINE( 254)		Float _hx_tmp53 = (::Global_obj::Surface - (int)5);
-HXDLIN( 254)		this->Covers->push( ::entity::Cover_obj::__new((int)102,(int)130,(int)185,_hx_tmp53,HX_("assets/images/coverwrench2.png",b8,d0,de,4e)));
-HXLINE( 255)		Float _hx_tmp54 = (::Global_obj::Surface - (int)5);
-HXDLIN( 255)		this->Covers->push( ::entity::Cover_obj::__new((int)270,(int)310,(int)185,_hx_tmp54,HX_("assets/images/mineCover1.png",b3,b8,9f,eb)));
-HXLINE( 256)		Float _hx_tmp55 = (::Global_obj::Surface - (int)5);
-HXDLIN( 256)		this->Covers->push( ::entity::Cover_obj::__new((int)310,(int)360,(int)185,_hx_tmp55,HX_("assets/images/MineCover2.png",54,e1,5b,29)));
-HXLINE( 257)		this->Covers->push( ::entity::Cover_obj::__new((int)290,(int)350,(int)110,(int)185,HX_("assets/images/minecover3.png",95,dd,bb,1b)));
-HXLINE( 258)		Float _hx_tmp56 = (::Global_obj::Surface - (int)5);
-HXDLIN( 258)		this->Covers->push( ::entity::Cover_obj::__new((int)0,(int)20,(int)185,_hx_tmp56,HX_("assets/images/minecover4.png",16,72,22,af)));
-HXLINE( 260)		{
-HXLINE( 260)			HX_VARI_NAME( Int,_g4,"_g") = (int)0;
-HXDLIN( 260)			HX_VARI_NAME( ::Array< ::Dynamic>,_g12,"_g1") = this->Covers;
-HXDLIN( 260)			while((_g4 < _g12->length)){
-HXLINE( 260)				HX_VARI_NAME(  ::entity::Cover,a2,"a") = _g12->__get(_g4).StaticCast<  ::entity::Cover >();
-HXDLIN( 260)				++_g4;
-HXLINE( 262)				Int _hx_tmp57 = this->members->indexOf(a2,null());
-HXDLIN( 262)				if ((_hx_tmp57 == (int)-1)) {
-HXLINE( 264)					this->add(a2);
+HXLINE( 249)		this->add(this->player);
+HXLINE( 252)		this->useIcon =  ::flixel::FlxSprite_obj::__new((int)0,(int)0,HX_("assets/images/use.png",b7,5c,7d,34));
+HXLINE( 255)		Float _hx_tmp52 = (::Global_obj::Surface - (int)5);
+HXDLIN( 255)		this->Covers->push( ::entity::Cover_obj::__new((int)60,(int)103,(int)185,_hx_tmp52,HX_("assets/images/coverWrenchT1.png",8d,94,e1,a2)));
+HXLINE( 256)		Float _hx_tmp53 = (::Global_obj::Surface - (int)5);
+HXDLIN( 256)		this->Covers->push( ::entity::Cover_obj::__new((int)102,(int)130,(int)185,_hx_tmp53,HX_("assets/images/coverwrench2.png",b8,d0,de,4e)));
+HXLINE( 257)		Float _hx_tmp54 = (::Global_obj::Surface - (int)5);
+HXDLIN( 257)		this->Covers->push( ::entity::Cover_obj::__new((int)270,(int)310,(int)185,_hx_tmp54,HX_("assets/images/mineCover1.png",b3,b8,9f,eb)));
+HXLINE( 258)		Float _hx_tmp55 = (::Global_obj::Surface - (int)5);
+HXDLIN( 258)		this->Covers->push( ::entity::Cover_obj::__new((int)310,(int)360,(int)185,_hx_tmp55,HX_("assets/images/MineCover2.png",54,e1,5b,29)));
+HXLINE( 259)		this->Covers->push( ::entity::Cover_obj::__new((int)290,(int)350,(int)110,(int)185,HX_("assets/images/minecover3.png",95,dd,bb,1b)));
+HXLINE( 260)		Float _hx_tmp56 = (::Global_obj::Surface - (int)5);
+HXDLIN( 260)		this->Covers->push( ::entity::Cover_obj::__new((int)0,(int)20,(int)185,_hx_tmp56,HX_("assets/images/minecover4.png",16,72,22,af)));
+HXLINE( 262)		{
+HXLINE( 262)			HX_VARI_NAME( Int,_g4,"_g") = (int)0;
+HXDLIN( 262)			HX_VARI_NAME( ::Array< ::Dynamic>,_g12,"_g1") = this->Covers;
+HXDLIN( 262)			while((_g4 < _g12->length)){
+HXLINE( 262)				HX_VARI_NAME(  ::entity::Cover,a2,"a") = _g12->__get(_g4).StaticCast<  ::entity::Cover >();
+HXDLIN( 262)				++_g4;
+HXLINE( 264)				Int _hx_tmp57 = this->members->indexOf(a2,null());
+HXDLIN( 264)				if ((_hx_tmp57 == (int)-1)) {
+HXLINE( 266)					this->add(a2);
             				}
             			}
             		}
-HXLINE( 268)		this->openMessage(HX_("ohh no I broke my ship!",7d,81,ec,b9));
-HXLINE( 270)		::flixel::FlxG_obj::sound->playMusic(HX_("assets/music/music.ogg",10,2a,92,80),((Float).5),null(),null());
-HXLINE( 272)		this->super::create();
+HXLINE( 270)		this->openMessage(HX_("ohh no I broke my ship!",7d,81,ec,b9));
+HXLINE( 272)		::flixel::FlxG_obj::sound->playMusic(HX_("assets/music/music.ogg",10,2a,92,80),((Float).5),null(),null());
+HXLINE( 274)		this->super::create();
             	}
 
 
 void PlayState_obj::update(Float elapsed){
-            	HX_STACK_FRAME("PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",276,0xb30d7781)
+            	HX_STACK_FRAME("PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",278,0xb30d7781)
             	HX_STACK_THIS(this)
             	HX_STACK_ARG(elapsed,"elapsed")
-HXLINE( 277)		this->super::update(elapsed);
-HXLINE( 280)		Bool _hx_tmp = ::Global_obj::TrapDoorJustOpened;
-HXDLIN( 280)		if (_hx_tmp) {
-HXLINE( 282)			this->Interactables->remove(this->TrapDoor);
-HXLINE( 283)			::Global_obj::TrapDoorJustOpened = false;
-HXLINE( 284)			this->player->TrapDoor->DropThrough = true;
-HXLINE( 285)			this->player->CurrentZone->DropThrough = true;
-HXLINE( 286)			this->MineEntrance->loadGraphic(HX_("assets/images/MineEntranceInteriorPostDoor.png",0d,31,78,df),null(),null(),null(),null(),null());
-HXLINE( 287)			this->player->GravZones->remove(this->player->TrapDoor);
-HXLINE( 288)			::flixel::FlxG_obj::sound->play(HX_("assets/sounds/gj2.ogg",d1,84,af,06),(int)1,false,null(),null(),null());
+HXLINE( 279)		this->super::update(elapsed);
+HXLINE( 283)		Bool _hx_tmp = ::Global_obj::TrapDoorJustOpened;
+HXDLIN( 283)		if (_hx_tmp) {
+HXLINE( 285)			this->Interactables->remove(this->TrapDoor);
+HXLINE( 286)			::Global_obj::TrapDoorJustOpened = false;
+HXLINE( 287)			this->player->TrapDoor->DropThrough = true;
+HXLINE( 288)			this->player->CurrentZone->DropThrough = true;
+HXLINE( 289)			this->MineEntrance->loadGraphic(HX_("assets/images/MineEntranceInteriorPostDoor.png",0d,31,78,df),null(),null(),null(),null(),null());
+HXLINE( 290)			this->player->GravZones->remove(this->player->TrapDoor);
+HXLINE( 291)			::flixel::FlxG_obj::sound->play(HX_("assets/sounds/gj2.ogg",d1,84,af,06),(int)1,false,null(),null(),null());
             		}
-HXLINE( 292)		Bool _hx_tmp1 = ::Global_obj::CodeDoorJustOpened;
-HXDLIN( 292)		if (_hx_tmp1) {
-HXLINE( 294)			::Global_obj::CodeDoorJustOpened = false;
-HXLINE( 295)			this->Interactables->remove(this->CodeDoor);
-HXLINE( 296)			this->remove(this->CodeDoor,null());
-HXLINE( 297)			this->player->CodeDoor->LeftWall = false;
-HXLINE( 298)			this->player->CurrentZone = this->player->getCurrentGravZone();
-HXLINE( 299)			::flixel::FlxG_obj::sound->play(HX_("assets/sounds/gj2.ogg",d1,84,af,06),null(),null(),null(),null(),null());
+HXLINE( 295)		Bool _hx_tmp1 = ::Global_obj::CodeDoorJustOpened;
+HXDLIN( 295)		if (_hx_tmp1) {
+HXLINE( 297)			::Global_obj::CodeDoorJustOpened = false;
+HXLINE( 298)			this->Interactables->remove(this->CodeDoor);
+HXLINE( 299)			this->remove(this->CodeDoor,null());
+HXLINE( 300)			this->player->CodeDoor->LeftWall = false;
+HXLINE( 301)			this->player->CurrentZone = this->player->getCurrentGravZone();
+HXLINE( 302)			::flixel::FlxG_obj::sound->play(HX_("assets/sounds/gj2.ogg",d1,84,af,06),null(),null(),null(),null(),null());
             		}
-HXLINE( 303)		Float _hx_tmp2 = this->player->radialPos;
-HXDLIN( 303)		Float _hx_tmp3 = this->player->get_width();
-HXDLIN( 303)		HX_VARI(  ::flixel::math::FlxPoint,Transform) =  ::flixel::math::FlxPoint_obj::__new((int)0,(_hx_tmp2 + ((Float)(_hx_tmp3 * (int)3) / (Float)(int)2)));
-HXLINE( 304)		HX_VARI(  ::flixel::math::FlxPoint,point) = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
-HXDLIN( 304)		point->_inPool = false;
-HXDLIN( 304)		point->_weak = true;
-HXDLIN( 304)		Transform->rotate(point,-(this->player->anglePos));
-HXLINE( 305)		this->useIcon->set_angle(-(this->player->anglePos));
-HXLINE( 306)		Float _hx_tmp4 = (::Global_obj::PlanetPos->x - Transform->x);
-HXDLIN( 306)		Float _hx_tmp5 = this->player->get_width();
-HXDLIN( 306)		Float _hx_tmp6 = (_hx_tmp4 - ((Float)_hx_tmp5 / (Float)(int)2));
-HXDLIN( 306)		Float _hx_tmp7 = (::Global_obj::PlanetPos->y - Transform->y);
-HXDLIN( 306)		Float _hx_tmp8 = this->player->get_width();
-HXDLIN( 306)		this->useIcon->setPosition(_hx_tmp6,(_hx_tmp7 - ((Float)_hx_tmp8 / (Float)(int)2)));
-HXLINE( 309)		{
-HXLINE( 309)			HX_VARI( Int,_g) = (int)0;
-HXDLIN( 309)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->Covers;
-HXDLIN( 309)			while((_g < _g1->length)){
-HXLINE( 309)				HX_VARI(  ::entity::Cover,a) = _g1->__get(_g).StaticCast<  ::entity::Cover >();
-HXDLIN( 309)				++_g;
-HXLINE( 311)				Bool _hx_tmp9;
-HXDLIN( 311)				Bool _hx_tmp10;
-HXDLIN( 311)				Bool _hx_tmp11;
-HXDLIN( 311)				if ((this->player->radialPos < a->radialEnd)) {
-HXLINE( 311)					_hx_tmp11 = (this->player->radialPos > (a->radialStart - (int)1));
+HXLINE( 306)		Float _hx_tmp2 = this->player->radialPos;
+HXDLIN( 306)		Float _hx_tmp3 = this->player->get_width();
+HXDLIN( 306)		HX_VARI(  ::flixel::math::FlxPoint,Transform) =  ::flixel::math::FlxPoint_obj::__new((int)0,(_hx_tmp2 + ((Float)(_hx_tmp3 * (int)3) / (Float)(int)2)));
+HXLINE( 307)		HX_VARI(  ::flixel::math::FlxPoint,point) = ::flixel::math::FlxPoint_obj::_pool->get()->set((int)0,(int)0);
+HXDLIN( 307)		point->_inPool = false;
+HXDLIN( 307)		point->_weak = true;
+HXDLIN( 307)		Transform->rotate(point,-(this->player->anglePos));
+HXLINE( 308)		this->useIcon->set_angle(-(this->player->anglePos));
+HXLINE( 309)		Float _hx_tmp4 = (::Global_obj::PlanetPos->x - Transform->x);
+HXDLIN( 309)		Float _hx_tmp5 = this->player->get_width();
+HXDLIN( 309)		Float _hx_tmp6 = (_hx_tmp4 - ((Float)_hx_tmp5 / (Float)(int)2));
+HXDLIN( 309)		Float _hx_tmp7 = (::Global_obj::PlanetPos->y - Transform->y);
+HXDLIN( 309)		Float _hx_tmp8 = this->player->get_width();
+HXDLIN( 309)		this->useIcon->setPosition(_hx_tmp6,(_hx_tmp7 - ((Float)_hx_tmp8 / (Float)(int)2)));
+HXLINE( 312)		{
+HXLINE( 312)			HX_VARI( Int,_g) = (int)0;
+HXDLIN( 312)			HX_VARI( ::Array< ::Dynamic>,_g1) = this->Covers;
+HXDLIN( 312)			while((_g < _g1->length)){
+HXLINE( 312)				HX_VARI(  ::entity::Cover,a) = _g1->__get(_g).StaticCast<  ::entity::Cover >();
+HXDLIN( 312)				++_g;
+HXLINE( 314)				Bool _hx_tmp9;
+HXDLIN( 314)				Bool _hx_tmp10;
+HXDLIN( 314)				Bool _hx_tmp11;
+HXDLIN( 314)				if ((this->player->radialPos < a->radialEnd)) {
+HXLINE( 314)					_hx_tmp11 = (this->player->radialPos > (a->radialStart - (int)1));
             				}
             				else {
-HXLINE( 311)					_hx_tmp11 = false;
+HXLINE( 314)					_hx_tmp11 = false;
             				}
-HXDLIN( 311)				if (_hx_tmp11) {
-HXLINE( 311)					_hx_tmp10 = (this->player->anglePos <= a->angleEnd);
-            				}
-            				else {
-HXLINE( 311)					_hx_tmp10 = false;
-            				}
-HXDLIN( 311)				if (_hx_tmp10) {
-HXLINE( 311)					_hx_tmp9 = (this->player->anglePos >= a->angleStart);
+HXDLIN( 314)				if (_hx_tmp11) {
+HXLINE( 314)					_hx_tmp10 = (this->player->anglePos <= a->angleEnd);
             				}
             				else {
-HXLINE( 311)					_hx_tmp9 = false;
+HXLINE( 314)					_hx_tmp10 = false;
             				}
-HXDLIN( 311)				if (_hx_tmp9) {
-HXLINE( 314)					a->tween = ::flixel::tweens::FlxTween_obj::tween(a, ::Dynamic(hx::Anon_obj::Create(1)
+HXDLIN( 314)				if (_hx_tmp10) {
+HXLINE( 314)					_hx_tmp9 = (this->player->anglePos >= a->angleStart);
+            				}
+            				else {
+HXLINE( 314)					_hx_tmp9 = false;
+            				}
+HXDLIN( 314)				if (_hx_tmp9) {
+HXLINE( 317)					a->tween = ::flixel::tweens::FlxTween_obj::tween(a, ::Dynamic(hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("alpha",5e,a7,96,21),(int)0)),((Float).4),null());
             				}
             				else {
-HXLINE( 319)					a->tween = ::flixel::tweens::FlxTween_obj::tween(a, ::Dynamic(hx::Anon_obj::Create(1)
+HXLINE( 322)					a->tween = ::flixel::tweens::FlxTween_obj::tween(a, ::Dynamic(hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("alpha",5e,a7,96,21),(int)1)),((Float).4),null());
             				}
             			}
             		}
-HXLINE( 324)		HX_VARI( Bool,interacion) = false;
-HXLINE( 325)		{
-HXLINE( 325)			HX_VARI_NAME( Int,_g2,"_g") = (int)0;
-HXDLIN( 325)			HX_VARI_NAME( ::Array< ::Dynamic>,_g11,"_g1") = this->Interactables;
-HXDLIN( 325)			while((_g2 < _g11->length)){
-HXLINE( 325)				HX_VARI_NAME(  ::entity::Interactable,a1,"a") = _g11->__get(_g2).StaticCast<  ::entity::Interactable >();
-HXDLIN( 325)				++_g2;
-HXLINE( 327)				Bool _hx_tmp12;
-HXDLIN( 327)				Bool _hx_tmp13;
-HXDLIN( 327)				Bool _hx_tmp14;
-HXDLIN( 327)				if ((this->player->radialPos < a1->radialEnd)) {
-HXLINE( 327)					_hx_tmp14 = (this->player->radialPos > a1->radialStart);
+HXLINE( 327)		HX_VARI( Bool,interacion) = false;
+HXLINE( 328)		{
+HXLINE( 328)			HX_VARI_NAME( Int,_g2,"_g") = (int)0;
+HXDLIN( 328)			HX_VARI_NAME( ::Array< ::Dynamic>,_g11,"_g1") = this->Interactables;
+HXDLIN( 328)			while((_g2 < _g11->length)){
+HXLINE( 328)				HX_VARI_NAME(  ::entity::Interactable,a1,"a") = _g11->__get(_g2).StaticCast<  ::entity::Interactable >();
+HXDLIN( 328)				++_g2;
+HXLINE( 330)				Bool _hx_tmp12;
+HXDLIN( 330)				Bool _hx_tmp13;
+HXDLIN( 330)				Bool _hx_tmp14;
+HXDLIN( 330)				if ((this->player->radialPos < a1->radialEnd)) {
+HXLINE( 330)					_hx_tmp14 = (this->player->radialPos > a1->radialStart);
             				}
             				else {
-HXLINE( 327)					_hx_tmp14 = false;
+HXLINE( 330)					_hx_tmp14 = false;
             				}
-HXDLIN( 327)				if (_hx_tmp14) {
-HXLINE( 327)					_hx_tmp13 = (this->player->anglePos <= a1->angleEnd);
-            				}
-            				else {
-HXLINE( 327)					_hx_tmp13 = false;
-            				}
-HXDLIN( 327)				if (_hx_tmp13) {
-HXLINE( 327)					_hx_tmp12 = (this->player->anglePos >= a1->angleStart);
+HXDLIN( 330)				if (_hx_tmp14) {
+HXLINE( 330)					_hx_tmp13 = (this->player->anglePos <= a1->angleEnd);
             				}
             				else {
-HXLINE( 327)					_hx_tmp12 = false;
+HXLINE( 330)					_hx_tmp13 = false;
             				}
-HXDLIN( 327)				if (_hx_tmp12) {
-HXLINE( 330)					interacion = true;
-HXLINE( 331)					Bool _hx_tmp15 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_6,1),(int)2);
-HXDLIN( 331)					if (_hx_tmp15) {
-HXLINE( 333)						a1->Callback();
+HXDLIN( 330)				if (_hx_tmp13) {
+HXLINE( 330)					_hx_tmp12 = (this->player->anglePos >= a1->angleStart);
+            				}
+            				else {
+HXLINE( 330)					_hx_tmp12 = false;
+            				}
+HXDLIN( 330)				if (_hx_tmp12) {
+HXLINE( 333)					interacion = true;
+HXLINE( 334)					Bool _hx_tmp15 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_6,1),(int)2);
+HXDLIN( 334)					if (_hx_tmp15) {
+HXLINE( 336)						a1->Callback();
             					}
             				}
             			}
             		}
-HXLINE( 337)		if (interacion) {
-HXLINE( 339)			this->add(this->useIcon);
+HXLINE( 340)		if (interacion) {
+HXLINE( 342)			this->add(this->useIcon);
             		}
             		else {
-HXLINE( 343)			this->remove(this->useIcon,null());
+HXLINE( 346)			this->remove(this->useIcon,null());
             		}
-HXLINE( 347)		Bool _hx_tmp16;
-HXDLIN( 347)		if ((this->text->text != HX_("",00,00,00,00))) {
-HXLINE( 347)			_hx_tmp16 = (::flixel::FlxG_obj::mouse->_leftButton->current == (int)2);
+HXLINE( 350)		Bool _hx_tmp16;
+HXDLIN( 350)		if ((this->text->text != HX_("",00,00,00,00))) {
+HXLINE( 350)			Bool _hx_tmp17 = (::flixel::FlxG_obj::mouse->_leftButton->current != (int)2);
+HXDLIN( 350)			if (_hx_tmp17) {
+HXLINE( 350)				Bool _hx_tmp18 = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< Int >::fromData( _hx_array_data_7,1),(int)2);
+HXDLIN( 350)				if (_hx_tmp18) {
+HXLINE( 350)					_hx_tmp16 = !(this->IgnoreEnter);
+            				}
+            				else {
+HXLINE( 350)					_hx_tmp16 = false;
+            				}
+            			}
+            			else {
+HXLINE( 350)				_hx_tmp16 = true;
+            			}
             		}
             		else {
-HXLINE( 347)			_hx_tmp16 = false;
+HXLINE( 350)			_hx_tmp16 = false;
             		}
-HXDLIN( 347)		if (_hx_tmp16) {
-HXLINE( 349)			this->text->set_text(HX_("",00,00,00,00));
-HXLINE( 350)			::Global_obj::Halt = false;
-HXLINE( 351)			this->remove(this->text,null());
-HXLINE( 352)			this->remove(this->textBox,null());
+HXDLIN( 350)		if (_hx_tmp16) {
+HXLINE( 352)			this->text->set_text(HX_("",00,00,00,00));
+HXLINE( 353)			::Global_obj::Halt = false;
+HXLINE( 354)			this->remove(this->text,null());
+HXLINE( 355)			this->remove(this->textBox,null());
+HXLINE( 356)			this->IgnoreEnter = false;
             		}
             	}
 
 
 void PlayState_obj::openMessage(::String m){
-            	HX_STACK_FRAME("PlayState","openMessage",0x3ea1148c,"PlayState.openMessage","PlayState.hx",357,0xb30d7781)
+            	HX_STACK_FRAME("PlayState","openMessage",0x3ea1148c,"PlayState.openMessage","PlayState.hx",362,0xb30d7781)
             	HX_STACK_THIS(this)
             	HX_STACK_ARG(m,"m")
-HXLINE( 358)		this->text->set_text(m);
-HXLINE( 359)		Float _hx_tmp = this->text->get_height();
-HXDLIN( 359)		this->text->set_y((((Float)((int)200 - _hx_tmp) / (Float)(int)2) + (int)520));
-HXLINE( 360)		::Global_obj::Halt = true;
-HXLINE( 361)		this->add(this->textBox);
-HXLINE( 362)		this->add(this->text);
+HXLINE( 362)		Bool _hx_tmp = !(this->IgnoreEnter);
+HXDLIN( 362)		if (_hx_tmp) {
+HXLINE( 364)			this->text->set_text(m);
+HXLINE( 365)			Float _hx_tmp1 = this->text->get_height();
+HXDLIN( 365)			this->text->set_y((((Float)((int)200 - _hx_tmp1) / (Float)(int)2) + (int)520));
+HXLINE( 366)			::Global_obj::Halt = true;
+HXLINE( 367)			this->add(this->textBox);
+HXLINE( 368)			this->add(this->text);
+HXLINE( 369)			this->IgnoreEnter = true;
+            		}
+            		else {
+HXLINE( 373)			this->IgnoreEnter = false;
+            		}
             	}
 
 
@@ -675,6 +699,7 @@ void PlayState_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(text,"text");
 	HX_MARK_MEMBER_NAME(MineEntrance,"MineEntrance");
 	HX_MARK_MEMBER_NAME(useIcon,"useIcon");
+	HX_MARK_MEMBER_NAME(IgnoreEnter,"IgnoreEnter");
 	 ::flixel::FlxState_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -697,6 +722,7 @@ void PlayState_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(text,"text");
 	HX_VISIT_MEMBER_NAME(MineEntrance,"MineEntrance");
 	HX_VISIT_MEMBER_NAME(useIcon,"useIcon");
+	HX_VISIT_MEMBER_NAME(IgnoreEnter,"IgnoreEnter");
 	 ::flixel::FlxState_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -730,6 +756,7 @@ hx::Val PlayState_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		if (HX_FIELD_EQ(inName,"CodeDoor") ) { return hx::Val( CodeDoor); }
 		break;
 	case 11:
+		if (HX_FIELD_EQ(inName,"IgnoreEnter") ) { return hx::Val( IgnoreEnter); }
 		if (HX_FIELD_EQ(inName,"openMessage") ) { return hx::Val( openMessage_dyn()); }
 		break;
 	case 12:
@@ -768,6 +795,9 @@ hx::Val PlayState_obj::__SetField(const ::String &inName,const hx::Val &inValue,
 		if (HX_FIELD_EQ(inName,"FuelCell") ) { FuelCell=inValue.Cast<  ::entity::Interactable >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"CodeDoor") ) { CodeDoor=inValue.Cast<  ::entity::Interactable >(); return inValue; }
 		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"IgnoreEnter") ) { IgnoreEnter=inValue.Cast< Bool >(); return inValue; }
+		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"MineEntrance") ) { MineEntrance=inValue.Cast<  ::flixel::FlxSprite >(); return inValue; }
 		break;
@@ -795,6 +825,7 @@ void PlayState_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("text","\xad","\xcc","\xf9","\x4c"));
 	outFields->push(HX_HCSTRING("MineEntrance","\x49","\x2c","\x63","\x09"));
 	outFields->push(HX_HCSTRING("useIcon","\x60","\x6f","\x5e","\x54"));
+	outFields->push(HX_HCSTRING("IgnoreEnter","\x86","\x9a","\x4b","\x78"));
 	super::__GetFields(outFields);
 };
 
@@ -816,6 +847,7 @@ static hx::StorageInfo PlayState_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::text::FlxText*/ ,(int)offsetof(PlayState_obj,text),HX_HCSTRING("text","\xad","\xcc","\xf9","\x4c")},
 	{hx::fsObject /*::flixel::FlxSprite*/ ,(int)offsetof(PlayState_obj,MineEntrance),HX_HCSTRING("MineEntrance","\x49","\x2c","\x63","\x09")},
 	{hx::fsObject /*::flixel::FlxSprite*/ ,(int)offsetof(PlayState_obj,useIcon),HX_HCSTRING("useIcon","\x60","\x6f","\x5e","\x54")},
+	{hx::fsBool,(int)offsetof(PlayState_obj,IgnoreEnter),HX_HCSTRING("IgnoreEnter","\x86","\x9a","\x4b","\x78")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *PlayState_obj_sStaticStorageInfo = 0;
@@ -838,6 +870,7 @@ static ::String PlayState_obj_sMemberFields[] = {
 	HX_HCSTRING("text","\xad","\xcc","\xf9","\x4c"),
 	HX_HCSTRING("MineEntrance","\x49","\x2c","\x63","\x09"),
 	HX_HCSTRING("useIcon","\x60","\x6f","\x5e","\x54"),
+	HX_HCSTRING("IgnoreEnter","\x86","\x9a","\x4b","\x78"),
 	HX_HCSTRING("create","\xfc","\x66","\x0f","\x7c"),
 	HX_HCSTRING("update","\x09","\x86","\x05","\x87"),
 	HX_HCSTRING("openMessage","\x1d","\xc7","\x52","\x35"),
