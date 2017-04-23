@@ -511,7 +511,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "320",
+			build: "634",
 			company: "Grimmr (Tiny Planet Studios)",
 			file: "Projectcrashland",
 			fps: 60,
